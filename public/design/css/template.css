@@ -1,0 +1,110 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin: 0 auto;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+header {
+  background-color: #00d2a4;
+  color: #138a72;
+  border-bottom: 2px solid #777;
+}
+header #logo {
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #ecf0f1;
+}
+header #logo figure img {
+  width: 160px;
+  height: auto;
+  display: block;
+  padding: 4px;
+}
+header #action {
+  float: right;
+  display: inline-block;
+  vertical-align: middle;
+}
+header #action #account {
+  float: left;
+}
+header #action #account ul {
+  list-style: none;
+  line-height: 40px;
+}
+header #action #account ul li {
+  float: left;
+  padding: 4px 10px;
+}
+header #action #account ul li a {
+  text-decoration: none;
+  color: #138a72;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -ms-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+header #action #account ul li a:hover {
+  color: #0d5d4d;
+}
+header #action #user {
+  float: left;
+}
+header #action #user figure {
+  margin-left: 10px;
+}
+header #action #user figure img {
+  width: 48px;
+  height: auto;
+  display: block;
+}
+#main {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+#main #menu {
+  float: left;
+  width: 160px;
+  height: 100%;
+  background-color: #393836;
+}
+#main #menu nav ul {
+  list-style: none;
+}
+#main #menu nav ul li {
+  border-bottom: 1px solid #53524f;
+}
+#main #menu nav ul li a {
+  display: block;
+  text-align: left;
+  text-decoration: none;
+  color: #138a72;
+  padding: 0.5em 0 0.5em 0.5em;
+  font-size: 1.1em;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -ms-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+#main #menu nav ul li a:hover {
+  border-left: 8px solid #5ec792;
+}
+#main #menu nav ul li .active {
+  border-left: 8px solid #00b890;
+}
+#main #content {
+  height: 100%;
+  margin: 0 auto;
+  background-color: #ecf0f1;
+}
