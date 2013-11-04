@@ -15,3 +15,15 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::get('login', function(){
+	return View::make('login');
+});
+
+Route::get('admin', array('before'=>'auth', 
+	function(){
+		return Redirect::to('home');
+	}
+));
+
+//Route::when('admin/*','auth');
