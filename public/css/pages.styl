@@ -1,0 +1,222 @@
+@import 'prefix.styl'
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,600");
+@font-face
+	font-family 'page icons'
+	src:url('fonts/page icons.eot')
+	src:url('fonts/page icons.eot?#iefix') format('embedded-opentype'), url('fonts/page icons.ttf') format('truetype'), url('fonts/page icons.woff') format('woff'), url('fonts/page icons.svg#page icons') format('svg')
+	font-weight normal
+	font-style normal
+
+sea = #16a085
+clouds = #ecf0f1
+light_gray_1 = #F5F7FA
+light_gray_2 = #E6E9ED
+
+dark_gray_1 = #656D78
+dark_gray_2 = #434A54
+
+html
+	font-family 'Open Sans'
+
+h1
+	width 50%
+	padding 1em 0
+	margin-left 160px
+	padding-left 48px
+	font-size 1.6em
+	color dark_gray_1
+	// border 1px solid red
+
+// Table Style...
+#table_box
+	// border 4px solid blue
+	// display block
+	margin-left 160px
+	padding 0 3em
+	#new_page, #save_changes
+		// border 1px solid red
+		padding 1em 0
+		a
+			text-decoration none
+			color dark_gray_1
+			// border 1px solid blue
+			padding 1em 0
+			span:before
+				color sea
+			.icon-pagesplus:before
+				font-size 0.8em
+	#save_changes
+		text-align center
+		margin 2em 0
+		// border 4px solid red
+		a
+			margin 0 1em
+			text-decoration none
+			color dark_gray_1
+			border 1px solid darken(light_gray_2, 10)
+			border-radius 4px
+			padding 0.5em
+			.icon-pagesclose:before
+				color #e74c3c
+
+table
+	width 100%
+	// margin 0 2em
+	border-collapse collapse
+	color dark_gray_1
+	text-align center
+	border thin solid light_gray_1
+	box-shadow(0 1px 1.1em rgba(0, 0, 0, .2))
+	tr
+		// border-bottom thin solid rgba(0, 0, 0, 0.1)
+		// border-bottom thin solid light_gray_1
+		td, th
+			padding 0.5em 2em
+			a
+				text-decoration none
+				color dark_gray_1
+				padding 0 0.5em
+				.icon-pagespencil:before
+					color sea
+				.icon-pagesremove:before
+					color darken(#f08270, 5)
+		&.tr_last, &.tr_first
+			border-bottom none
+		&:nth-child(even)
+			background-color darken(light_gray_2, 2)
+		th
+			color light_gray_1
+			background-color darken(sea, -5)
+			// background-color sea
+		p
+			padding 0em 0
+
+input[type="checkbox"]
+	border 1px solid red
+	width 40px
+	// margin 0 auto
+	position relative
+	visibility hidden
+	&:before
+		// padding-left 1.1em
+		visibility visible
+		transition(all 0.5s)
+		position relative
+		display block
+		width 40px
+		height 15px
+		border 1px solid #808080
+		border-radius(50px)
+		content ""
+		background #49dccf
+		// background #1abc9c
+		box-shadow inset 0 0 4px #333, 0 -2px 2px #b9b9b5, 0 2px 2px #f4f4f4
+	&:after
+		visibility visible
+		-webkit-transition all 0.5s
+		position absolute
+		top 1px
+		left 1px
+		display block
+		width 5px
+		height 5px
+		border 5px solid #ededec
+		border-radius(50px)
+		content ""
+		background #fff
+		box-shadow 0 1px 8px #333
+		background #d5d4cd
+		background -webkit-gradient(linear, 0 0, 0 100%, from(#d5d4cd), to(#f8f8f7))
+		background -webkit-linear-gradient(#d5d4cd 0%, #f8f8f7 100%)
+		background -moz-linear-gradient(#d5d4cd 0%, #f8f8f7 100%)
+		background -o-linear-gradient(#d5d4cd 0%, #f8f8f7 100%)
+		background linear-gradient(#d5d4cd 0%, #f8f8f7 100%)
+		// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d5d4cd', endColorstr='#f8f8f7',GradientType=0)
+
+input[type="checkbox"]:checked:before
+	position absolute
+	display block
+	width 40px
+	height 15px
+	border 1px solid #808080
+	border-radius(50px)
+	content ""
+	background #f08270
+input[type="checkbox"]:checked:after
+	-webkit-transition all 0.5s
+	position absolute
+	top 1px
+	left 26px
+	display block
+	width 5px
+	height 5px
+	border 5px solid #ededec
+	border-radius(50px)
+	content ""
+	background #fff
+	box-shadow 0 1px 8px #333
+	background #d5d4cd
+	background -webkit-gradient(linear, 0 0, 0 100%, from(#d5d4cd), to(#f8f8f7))
+	background -webkit-linear-gradient(#d5d4cd 0%, #f8f8f7 100%)
+	background -moz-linear-gradient(#d5d4cd 0%, #f8f8f7 100%)
+	background -o-linear-gradient(#d5d4cd 0%, #f8f8f7 100%)
+	background linear-gradient(#d5d4cd 0%, #f8f8f7 100%)
+	// filter progid:DXImageTransform.Microsoft.gradient( startColorstr='#d5d4cd', endColorstr='#f8f8f7',GradientType=0 )
+
+[class*="icon-pages"]
+	font-family 'page icons'
+	speak none
+	font-style normal
+	font-weight normal
+	font-variant normal
+	text-transform none
+	line-height 1
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+
+.icon-pagespencil:before
+	content "\e600"
+.icon-pagesremove:before
+	content "\e601"
+.icon-pagesdisk:before
+	content "\e602"
+.icon-pagesplus:before
+	content "\e603"
+.icon-pagesclose:before
+	content "\e607"
+.icon-pagesuniE604:before
+	content "\e604"
+.icon-pagesarrow-right:before
+	content "\e605"
+.icon-pagesarrow-right2:before
+	content "\e606"
+.icon-pagescross:before
+	content "\e608"
+// .icon-pagesplus:before
+// content "\e609"
+
+// Switch buttons...
+// .switch
+// 	color #6f839a
+// 	cursor pointer
+// 	font-weight 600
+// 	line-height 1.5em
+// 	border-radius(3px)
+// 	padding .125em .5em
+// 	display inline-block
+// 	background-color #3e4956
+// 	transition(.15s ease)
+
+// input[type="radio"]:checked + .switch
+// 	color #fff
+// 	padding-left 1em
+// 	padding-right 1em
+
+// input[type="radio"]:checked + .switch--on
+// 	background-color #7eab55
+
+
+// input[type="radio"]:checked + .switch--off
+// 	background-color #dd4a38

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Template</title>
+	<link rel="stylesheet" href="css/template.css">
+	<link rel="stylesheet" href="css/nueva.css">
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/template.js"></script>
+</head>
+<body>
+
+	<header>
+		<div id="logo">
+			<figure>
+				<img src="crawlCMS_logo.png" alt="">
+			</figure>
+		</div><!--
+		--><div id="action">
+			<div id="account">
+				<ul>
+					<li>MdOS</li><!--
+					--><li><a href="">Mi Cuenta</a></li><!--
+					--><li><a href="">Salir</a></li>
+				</ul>
+			</div>
+			<div id="user">
+				<figure>
+					<img src="emilmdos.png" alt="">
+				</figure>
+			</div>
+		</div>
+	</header>
+
+	<section id="main">
+		<section id="menu">
+			<nav>
+				<ul>
+					<li><a href="">Configuración</a></li>
+					<li><a class="active" href="">Páginas</a></li>
+					<li><a href="">Widgets</a></li>
+					<li><a href="">Usuarios</a></li>
+				</ul>
+			</nav>
+		</section><!--
+		--><section id="content">
+			
+			<div id="site_map">
+				<a href=""><h1 class="h1_link">Páginas </h1></a> <span class="icon-pagesuniE604"></span> <h1> Nueva Página</h1>
+			</div>
+			<section class="conf_item">
+				<h2>Nombre</h2>
+				<p>
+					<label for="nombre">¿Qué nombre tendrá tu página en el menú?</label><input type="text" autofocus placeholder="nombre">
+				</p>
+			</section>
+			<section class="conf_item">
+				<h2>Titulo</h2>
+				<p>
+					<label for="nombre">¿Cual será el titulo de tu página?</label><input type="text" placeholder="titulo">
+				</p>
+			</section>
+			<section class="conf_item">
+				<h2>Palabras Clave</h2>
+				<p>
+					<label for="nombre">¿Qué palabras definen tu sitio?</label><input type="text" placeholder="keywords">
+				</p>
+			</section>
+			<section class="conf_item">
+				<h2>Layouts</h2>
+				<p>
+					Elije la distribución de tu nueva página.
+				</p>
+				<div class="layout_box">
+					<div class="layout_item">
+						<p>
+							<input type="radio" name="layout" id="1" checked>
+							Uno
+						</p>
+						<img src="" alt="">
+					</div><!--
+					--><div class="layout_item">
+						<p>
+							<input type="radio" name="layout" id="2">
+							Dos
+						</p>
+						<img src="" alt="">
+					</div><!--
+					--><div class="layout_item">
+						<p>
+							<input type="radio" name="layout" id="3">
+							Tres
+						</p>
+						<img src="" alt="">
+					</div>
+				</div>
+			</section>
+			<section class="conf_item">
+				<h2>Contenido</h2>
+				<p>
+					Escribe todo cuanto quieras que contenga tu página.
+				</p>
+			</section>
+			<div id="data_actions">
+				<a href=""><span class="icon-pagesclose"> Cancelar</a>
+				<a href=""><span class="icon-pagesdisk"> Guardar Cambios</a>
+			</div>
+		</section>
+	</section>
+
+</body>
+</html>

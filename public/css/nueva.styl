@@ -1,0 +1,137 @@
+@import 'prefix.styl'
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,600");
+@font-face
+	font-family 'page icons'
+	src:url('fonts/page icons.eot')
+	src:url('fonts/page icons.eot?#iefix') format('embedded-opentype'), url('fonts/page icons.ttf') format('truetype'), url('fonts/page icons.woff') format('woff'), url('fonts/page icons.svg#page icons') format('svg')
+	font-weight normal
+	font-style normal
+
+sea = #16a085
+clouds = #ecf0f1
+light_gray_1 = #F5F7FA
+light_gray_2 = #E6E9ED
+
+dark_gray_1 = #656D78
+dark_gray_2 = #434A54
+
+html
+	font-family 'Open Sans'
+
+#content
+	padding-left 160px
+
+#site_map
+	// border 1px solid red
+	padding-left 3em
+	color dark_gray_2
+	margin-bottom 1.75em
+	a
+		text-decoration none
+		color dark_gray_2
+	h1
+		display inline-block
+		font-size 1.6em
+		padding-top 0.75em
+		font-weight normal
+		font-family 'Open Sans'
+		&.h1_link
+			border-bottom 1px dashed dark_gray_1
+	span
+		font-size 1.2em
+		&:before
+			color dark_gray_1
+
+.conf_item
+	padding 1em 4em
+	h2
+		color dark_gray_2
+		font-size 1.2em
+	p
+		color dark_gray_1
+		width 100%
+		padding-top 0.5em
+		// border 1px solid green
+		// display inline-block
+		label
+			// border 1px solid red
+			width 40%
+			display inline-block
+		input
+			// border 1px solid blue
+			display inline-block
+			padding 0.25em
+			outline none
+			border none
+			color dark_gray_1
+			background-color light_gray_1
+	.layout_box
+		// border 1px solid red
+		// padding 0 1%
+		margin-top 0.5em
+		text-align center
+		.layout_item
+			// border 1px solid blue
+			display inline-block
+			width 33.3%
+			padding 0.5em 2em
+			p
+				padding 0.25em 0
+				text-align left
+				// border 1px solid green
+			img
+				width 100%
+				height 200px
+				background-color dark_gray_2
+	&:nth-child(even)
+		background-color darken(light_gray_2, 2)
+
+#data_actions
+	text-align center
+	padding 2em 0
+	a
+		margin 0 1em
+		text-decoration none
+		color dark_gray_1
+		border 1px solid darken(light_gray_2, 10)
+		border-radius 4px
+		padding 0.5em
+		span:before
+			color sea
+		.icon-pagesclose:before
+			color #e74c3c
+
+
+[class*="icon-pages"]
+	font-family 'page icons'
+	speak none
+	font-style normal
+	font-weight normal
+	font-variant normal
+	text-transform none
+	line-height 1
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+
+.icon-pagespencil:before
+	content "\e600"
+.icon-pagesremove:before
+	content "\e601"
+.icon-pagesdisk:before
+	content "\e602"
+.icon-pagesplus:before
+	content "\e603"
+.icon-pagesclose:before
+	content "\e607"
+.icon-pagesuniE604:before
+	content "\e604"
+.icon-pagesarrow-right:before
+	content "\e605"
+.icon-pagesarrow-right2:before
+	content "\e606"
+.icon-pagescross:before
+	content "\e608"
+.icon-pagesplus:before
+	content "\e609"

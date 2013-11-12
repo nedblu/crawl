@@ -1,0 +1,245 @@
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,600");
+@font-face {
+  font-family: 'page icons';
+  src: url("fonts/page icons.eot");
+  src: url("fonts/page icons.eot?#iefix") format('embedded-opentype'), url("fonts/page icons.ttf") format('truetype'), url("fonts/page icons.woff") format('woff'), url("fonts/page icons.svg#page icons") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+html {
+  font-family: 'Open Sans';
+}
+h1 {
+  width: 50%;
+  padding: 1em 0;
+  margin-left: 160px;
+  padding-left: 48px;
+  font-size: 1.6em;
+  color: #656d78;
+}
+#table_box {
+  margin-left: 160px;
+  padding: 0 3em;
+}
+#table_box #new_page,
+#table_box #save_changes {
+  padding: 1em 0;
+}
+#table_box #new_page a,
+#table_box #save_changes a {
+  text-decoration: none;
+  color: #656d78;
+  padding: 1em 0;
+}
+#table_box #new_page a span:before,
+#table_box #save_changes a span:before {
+  color: #16a085;
+}
+#table_box #new_page a .icon-pagesplus:before,
+#table_box #save_changes a .icon-pagesplus:before {
+  font-size: 0.8em;
+}
+#table_box #save_changes {
+  text-align: center;
+  margin: 2em 0;
+}
+#table_box #save_changes a {
+  margin: 0 1em;
+  text-decoration: none;
+  color: #656d78;
+  border: 1px solid #c8cfd8;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  padding: 0.5em;
+}
+#table_box #save_changes a .icon-pagesclose:before {
+  color: #e74c3c;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #656d78;
+  text-align: center;
+  border: thin solid #f5f7fa;
+  -webkit-box-shadow: 0 1px 1.1em rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 1px 1.1em rgba(0,0,0,0.2);
+  -ms-box-shadow: 0 1px 1.1em rgba(0,0,0,0.2);
+  -o-box-shadow: 0 1px 1.1em rgba(0,0,0,0.2);
+  box-shadow: 0 1px 1.1em rgba(0,0,0,0.2);
+}
+table tr td,
+table tr th {
+  padding: 0.5em 2em;
+}
+table tr td a,
+table tr th a {
+  text-decoration: none;
+  color: #656d78;
+  padding: 0 0.5em;
+}
+table tr td a .icon-pagespencil:before,
+table tr th a .icon-pagespencil:before {
+  color: #16a085;
+}
+table tr td a .icon-pagesremove:before,
+table tr th a .icon-pagesremove:before {
+  color: #ee6e59;
+}
+table tr.tr_last,
+table tr.tr_first {
+  border-bottom: none;
+}
+table tr:nth-child(even) {
+  background-color: #e0e4e9;
+}
+table tr th {
+  color: #f5f7fa;
+  background-color: #19b698;
+}
+table tr p {
+  padding: 0em 0;
+}
+input[type="checkbox"] {
+  border: 1px solid #f00;
+  width: 40px;
+  position: relative;
+  visibility: hidden;
+}
+input[type="checkbox"]:before {
+  visibility: visible;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 15px;
+  border: 1px solid #808080;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
+  content: "";
+  background: #49dccf;
+  -webkit-box-shadow: inset 0 0 4px #333, 0 -2px 2px #b9b9b5, 0 2px 2px #f4f4f4;
+  -moz-box-shadow: inset 0 0 4px #333, 0 -2px 2px #b9b9b5, 0 2px 2px #f4f4f4;
+  -ms-box-shadow: inset 0 0 4px #333, 0 -2px 2px #b9b9b5, 0 2px 2px #f4f4f4;
+  -o-box-shadow: inset 0 0 4px #333, 0 -2px 2px #b9b9b5, 0 2px 2px #f4f4f4;
+  box-shadow: inset 0 0 4px #333, 0 -2px 2px #b9b9b5, 0 2px 2px #f4f4f4;
+}
+input[type="checkbox"]:after {
+  visibility: visible;
+  -webkit-transition: all 0.5s;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  display: block;
+  width: 5px;
+  height: 5px;
+  border: 5px solid #ededec;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
+  content: "";
+  background: #fff;
+  -webkit-box-shadow: 0 1px 8px #333;
+  -moz-box-shadow: 0 1px 8px #333;
+  -ms-box-shadow: 0 1px 8px #333;
+  -o-box-shadow: 0 1px 8px #333;
+  box-shadow: 0 1px 8px #333;
+  background: #d5d4cd;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#d5d4cd), to(#f8f8f7));
+  background: -webkit-linear-gradient(#d5d4cd 0%, #f8f8f7 100%);
+  background: -moz-linear-gradient(#d5d4cd 0%, #f8f8f7 100%);
+  background: -o-linear-gradient(#d5d4cd 0%, #f8f8f7 100%);
+  background: linear-gradient(#d5d4cd 0%, #f8f8f7 100%);
+}
+input[type="checkbox"]:checked:before {
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 15px;
+  border: 1px solid #808080;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
+  content: "";
+  background: #f08270;
+}
+input[type="checkbox"]:checked:after {
+  -webkit-transition: all 0.5s;
+  position: absolute;
+  top: 1px;
+  left: 26px;
+  display: block;
+  width: 5px;
+  height: 5px;
+  border: 5px solid #ededec;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
+  content: "";
+  background: #fff;
+  -webkit-box-shadow: 0 1px 8px #333;
+  -moz-box-shadow: 0 1px 8px #333;
+  -ms-box-shadow: 0 1px 8px #333;
+  -o-box-shadow: 0 1px 8px #333;
+  box-shadow: 0 1px 8px #333;
+  background: #d5d4cd;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#d5d4cd), to(#f8f8f7));
+  background: -webkit-linear-gradient(#d5d4cd 0%, #f8f8f7 100%);
+  background: -moz-linear-gradient(#d5d4cd 0%, #f8f8f7 100%);
+  background: -o-linear-gradient(#d5d4cd 0%, #f8f8f7 100%);
+  background: linear-gradient(#d5d4cd 0%, #f8f8f7 100%);
+}
+[class*="icon-pages"] {
+  font-family: 'page icons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+/* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-pagespencil:before {
+  content: "\e600";
+}
+.icon-pagesremove:before {
+  content: "\e601";
+}
+.icon-pagesdisk:before {
+  content: "\e602";
+}
+.icon-pagesplus:before {
+  content: "\e603";
+}
+.icon-pagesclose:before {
+  content: "\e607";
+}
+.icon-pagesuniE604:before {
+  content: "\e604";
+}
+.icon-pagesarrow-right:before {
+  content: "\e605";
+}
+.icon-pagesarrow-right2:before {
+  content: "\e606";
+}
+.icon-pagescross:before {
+  content: "\e608";
+}

@@ -6,15 +6,17 @@ nav_bg = rgb(57, 56, 54)
 clouds = #ecf0f1
 crawl = rgb(255,112,127)
 
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,600");
 @import 'prefix.styl'
 
 *
 	box-sizing(border-box)
 	default_values()
 html, body
-	// background-color #bdc3c7
+	// background-color nav_bg
 	// background-color #777
 	height 100%
+	font-family 'Open Sans'
 
 // HEADER SECTION...
 
@@ -74,6 +76,7 @@ header
 	// margin-top 2px
 	#menu
 		float left
+		// display inline-block
 		width 160px
 		height 100%
 		background-color nav_bg
@@ -98,6 +101,8 @@ header
 						// border-left 8px solid #5EC792
 						border-left 8px solid emerald
 	#content
+		// display inline-block
+		// width 100%-160px
 		height 100%
 		margin 0 auto
 		background-color clouds

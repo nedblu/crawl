@@ -1,0 +1,148 @@
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,600");
+@font-face {
+  font-family: 'page icons';
+  src: url("fonts/page icons.eot");
+  src: url("fonts/page icons.eot?#iefix") format('embedded-opentype'), url("fonts/page icons.ttf") format('truetype'), url("fonts/page icons.woff") format('woff'), url("fonts/page icons.svg#page icons") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+html {
+  font-family: 'Open Sans';
+}
+#content {
+  padding-left: 160px;
+}
+#site_map {
+  padding-left: 3em;
+  color: #434a54;
+  margin-bottom: 1.75em;
+}
+#site_map a {
+  text-decoration: none;
+  color: #434a54;
+}
+#site_map h1 {
+  display: inline-block;
+  font-size: 1.6em;
+  padding-top: 0.75em;
+  font-weight: normal;
+  font-family: 'Open Sans';
+}
+#site_map h1.h1_link {
+  border-bottom: 1px dashed #656d78;
+}
+#site_map span {
+  font-size: 1.2em;
+}
+#site_map span:before {
+  color: #656d78;
+}
+.conf_item {
+  padding: 1em 4em;
+}
+.conf_item h2 {
+  color: #434a54;
+  font-size: 1.2em;
+}
+.conf_item p {
+  color: #656d78;
+  width: 100%;
+  padding-top: 0.5em;
+}
+.conf_item p label {
+  width: 40%;
+  display: inline-block;
+}
+.conf_item p input {
+  display: inline-block;
+  padding: 0.25em;
+  outline: none;
+  border: none;
+  color: #656d78;
+  background-color: #f5f7fa;
+}
+.conf_item .layout_box {
+  margin-top: 0.5em;
+  text-align: center;
+}
+.conf_item .layout_box .layout_item {
+  display: inline-block;
+  width: 33.3%;
+  padding: 0.5em 2em;
+}
+.conf_item .layout_box .layout_item p {
+  padding: 0.25em 0;
+  text-align: left;
+}
+.conf_item .layout_box .layout_item img {
+  width: 100%;
+  height: 200px;
+  background-color: #434a54;
+}
+.conf_item:nth-child(even) {
+  background-color: #e0e4e9;
+}
+#data_actions {
+  text-align: center;
+  padding: 2em 0;
+}
+#data_actions a {
+  margin: 0 1em;
+  text-decoration: none;
+  color: #656d78;
+  border: 1px solid #c8cfd8;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  padding: 0.5em;
+}
+#data_actions a span:before {
+  color: #16a085;
+}
+#data_actions a .icon-pagesclose:before {
+  color: #e74c3c;
+}
+[class*="icon-pages"] {
+  font-family: 'page icons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+/* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-pagespencil:before {
+  content: "\e600";
+}
+.icon-pagesremove:before {
+  content: "\e601";
+}
+.icon-pagesdisk:before {
+  content: "\e602";
+}
+.icon-pagesplus:before {
+  content: "\e603";
+}
+.icon-pagesclose:before {
+  content: "\e607";
+}
+.icon-pagesuniE604:before {
+  content: "\e604";
+}
+.icon-pagesarrow-right:before {
+  content: "\e605";
+}
+.icon-pagesarrow-right2:before {
+  content: "\e606";
+}
+.icon-pagescross:before {
+  content: "\e608";
+}
+.icon-pagesplus:before {
+  content: "\e609";
+}

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Template</title>
+	<link rel="stylesheet" href="css/template.css">
+	<link rel="stylesheet" href="css/pages.css">
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/template.js"></script>
+</head>
+<body>
+
+	<header>
+		<div id="logo">
+			<figure>
+				<img src="crawlCMS_logo.png" alt="">
+			</figure>
+		</div><!--
+		--><div id="action">
+			<div id="account">
+				<ul>
+					<li>MdOS</li><!--
+					--><li><a href="">Mi Cuenta</a></li><!--
+					--><li><a href="">Salir</a></li>
+				</ul>
+			</div>
+			<div id="user">
+				<figure>
+					<img src="emilmdos.png" alt="">
+				</figure>
+			</div>
+		</div>
+	</header>
+
+	<section id="main">
+		<section id="menu">
+			<nav>
+				<ul>
+					<li><a href="">Configuración</a></li>
+					<li><a class="active" href="">Páginas</a></li>
+					<li><a href="">Widgets</a></li>
+					<li><a href="">Usuarios</a></li>
+				</ul>
+			</nav>
+		</section>
+		<section id="content">
+
+			<h1>Páginas</h1>
+
+			<div id="pages_box">
+				<div id="table_box">
+					<div id="new_page">
+						<a href=""><span class="icon-pagesplus"></span> Nueva Página</a>
+					</div>
+					<table>
+						<thead>
+							<tr class="tr_first">
+								<th>Páginas</th>
+								<th>Acciones</th>
+								<th>Estatus</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Home</td>
+								<td>
+									<a href=""><span class="icon-pagespencil"></span></a> | <a href=""><span class="icon-pagesremove"></span></a>
+								</td>
+								<td>
+									<p>
+									    <input type="checkbox"/>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td>Misión</td>
+								<td>
+									<a href=""><span class="icon-pagespencil"></span></a> | <a href=""><span class="icon-pagesremove"></span></a>
+								</td>
+								<td>
+									<p>
+									    <input type="checkbox" checked/>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td>Visión</td>
+								<td>
+									<a href=""><span class="icon-pagespencil"></span></a> | <a href=""><span class="icon-pagesremove"></span></a>
+								</td>
+								<td>
+									<p>
+									    <input type="checkbox"/>
+									</p>
+								</td>
+							</tr>
+							<tr class="tr_last">
+								<td>About</td>
+								<td>
+									<a href=""><span class="icon-pagespencil"></span></a> | <a href=""><span class="icon-pagesremove"></span></a>
+								</td>
+								<td>
+									<p>
+									    <input type="checkbox" checked/>
+									</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div id="save_changes">
+						<a href=""><span class="icon-pagesclose"> Cancelar</a>
+						<a href=""><span class="icon-pagesdisk"> Guardar Cambios</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</section>
+
+</body>
+</html>
