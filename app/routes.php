@@ -16,11 +16,28 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::get('login', function(){
+Route::get('crawl/login', function(){
 	return View::make('login');
 });
 
-Route::get('admin', array('before'=>'auth', 
+Route::post('crawl/login', function(){
+	$userdata = [
+		'username' => Input::get('username'),
+		'password' => Input::get('password')
+	];
+
+	if(Auth::attempt($userdata))
+	{
+		return Redirect::to('crawl');
+	}
+	else
+	{
+		return Redirect::to('crawl/login')
+				->with('login_errors', true);
+	}
+});
+
+Route::get('crawl', array('before'=>'auth', 
 	function(){
 		return Redirect::to('home');
 	}
