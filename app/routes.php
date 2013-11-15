@@ -21,6 +21,7 @@ Route::get('crawl/login', function(){
 });
 
 Route::post('crawl/login', function(){
+
 	$userdata = [
 		'username' => Input::get('username'),
 		'password' => Input::get('password')
@@ -32,15 +33,20 @@ Route::post('crawl/login', function(){
 	}
 	else
 	{
+
 		return Redirect::to('crawl/login')
-				->with('login_errors', true);
+			->with('login_errors', true);	
 	}
 });
 
-Route::get('crawl', array('before'=>'auth', 
-	function(){
-		return Redirect::to('home');
-	}
-));
+Route::get('crawl/logout', function(){
+	Auth::logout();
+	return Redirect::to('crawl/login');
+});
+
+Route::get('crawl', array('before'=>'auth', function(){
+
+	return "gel";
+}));
 
 //Route::when('admin/*','auth');

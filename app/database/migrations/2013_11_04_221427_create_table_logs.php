@@ -16,7 +16,7 @@ class CreateTableLogs extends Migration {
 			$table->increments('id');
 
 			$table->integer('id_username');
-			$table->strings('details', 200);
+			$table->string('details', 200);
 
 			$table->timestamps();
 		});
