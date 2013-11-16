@@ -20,33 +20,18 @@ Route::get('crawl/login', function(){
 	return View::make('login');
 });
 
-Route::post('crawl/login', function(){
+Route::post('crawl/login', [
+	'uses' => 'AuthController@login', 
+	'before' => 'attempt'
+]);
 
-	$userdata = [
-		'username' => Input::get('username'),
-		'password' => Input::get('password')
-	];
+Route::get('crawl/logout', [
+	'uses' => 'AuthController@logout',
+	'before' => 'auth'
+]);
 
-	if(Auth::attempt($userdata))
-	{
-		return Redirect::to('crawl');
-	}
-	else
-	{
-
-		return Redirect::to('crawl/login')
-			->with('login_errors', true);	
-	}
-});
-
-Route::get('crawl/logout', function(){
-	Auth::logout();
-	return Redirect::to('crawl/login');
-});
-
-Route::get('crawl', array('before'=>'auth', function(){
-
-	return "gel";
-}));
-
-//Route::when('admin/*','auth');
+Route::get('crawl', [
+	'before'=>'auth', 
+	function(){
+		return "gel";
+}]);
