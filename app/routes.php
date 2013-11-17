@@ -32,6 +32,24 @@ Route::get('crawl/logout', [
 
 Route::get('crawl', [
 	'before'=>'auth', 
-	function(){
-		return "gel";
-}]);
+	function()
+	{
+		return View::make('pages');
+	}
+]);
+
+Route::get('crawl/paginas', [
+	'before'=>'auth',
+	function()
+	{
+		return View::make('pages');
+	}
+]);
+
+Route::get('crawl/perfil', [
+	'before'=>'auth',
+	function()
+	{
+		return View::make('perfil');
+	}
+]);
