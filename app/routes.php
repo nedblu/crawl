@@ -17,7 +17,9 @@ Route::get('/', function()
 });
 
 Route::get('crawl/login', function(){
+	
 	return View::make('login');
+	
 });
 
 Route::post('crawl/login', [
