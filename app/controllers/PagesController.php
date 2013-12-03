@@ -17,8 +17,21 @@ class PagesController extends BaseController {
 	public function updatePage()
 	{
 		$changes = Input::all();
-		var_dump($changes);
-		echo $changes[1];
+
+		if(sizeof($changes) == 1)
+		{
+			DB::table('pages')->where('status', true)->update(['status' => false]);
+			return Redirect::to('crawl/paginas');
+		}
+		else
+		{
+			foreach ($changes['page'] as $change) 
+			{
+				DB::table('pages')->where('id', $change)->update(['status' => true]);
+			}
+			return Redirect::to('crawl/paginas');
+
+		}
 	}
 
 }

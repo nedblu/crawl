@@ -6,7 +6,7 @@ class PagesTableSeeder extends Seeder {
 	{
 		$pages = [
 			[
-				'name' => 'Inicio',
+				'name' => 'Pagina1',
 				'title' => 'Inicio',
 				'keywords' => 'Prueba, Prueba, Prueba, Prueba, Prueba, Prueba, Prueba, Prueba', 
 				'layout' => 1, 
@@ -14,7 +14,7 @@ class PagesTableSeeder extends Seeder {
 				'status' => true
 			],
 			[
-				'name' => 'Inicio',
+				'name' => 'Pagina2',
 				'title' => 'Inicio',
 				'keywords' => 'Prueba, Prueba, Prueba, Prueba, Prueba, Prueba, Prueba, Prueba', 
 				'layout' => 1, 
@@ -22,7 +22,31 @@ class PagesTableSeeder extends Seeder {
 				'status' => false
 			],
 			[
-				'name' => 'Inicio',
+				'name' => 'Pagina3',
+				'title' => 'Inicio',
+				'keywords' => 'Prueba, Prueba, Prueba, Prueba, Prueba, Prueba, Prueba, Prueba', 
+				'layout' => 1, 
+				'content' => 'lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem',
+				'status' => true
+			],
+			[
+				'name' => 'Pagina4',
+				'title' => 'Inicio',
+				'keywords' => 'Prueba, Prueba, Prueba, Prueba, Prueba, Prueba, Prueba, Prueba', 
+				'layout' => 1, 
+				'content' => 'lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem',
+				'status' => true
+			],
+			[
+				'name' => 'Pagina5',
+				'title' => 'Inicio',
+				'keywords' => 'Prueba, Prueba, Prueba, Prueba, Prueba, Prueba, Prueba, Prueba', 
+				'layout' => 1, 
+				'content' => 'lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem',
+				'status' => false
+			],
+			[
+				'name' => 'Pagina6',
 				'title' => 'Inicio',
 				'keywords' => 'Prueba, Prueba, Prueba, Prueba, Prueba, Prueba, Prueba, Prueba', 
 				'layout' => 1, 

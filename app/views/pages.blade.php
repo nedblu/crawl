@@ -27,9 +27,9 @@
 								</td>
 								<td>
 									@if($page->status == 1)
-										{{ Form::checkbox($page->id, 'status' , 'checked') }}
+										{{ Form::checkbox('page[]', $page->id , 'checked') }}
 									@else
-										{{ Form::checkbox($page->id, 'status') }}
+										{{ Form::checkbox('page[]', $page->id) }}
 									@endif
 								</td>
 							</tr>

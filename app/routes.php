@@ -65,7 +65,7 @@ Route::group(['prefix' => 'crawl'], function(){
 
 	Route::post('paginas/update', [
 		'uses' => 'PagesController@updatePage',
-		'before' => 'auth'
+		'before' => 'auth|csrf'
 	]);
 
 
