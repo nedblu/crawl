@@ -16,42 +16,66 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::get('crawl/login', function(){
+
+
+Route::group(['prefix' => 'crawl'], function(){
 	
-	return View::make('login');
-	
+	/*
+	|---------------------------------------------------------------------------
+	| Section for Login, calling AuthController
+	|---------------------------------------------------------------------------
+	*/
+	Route::get('login', 'AuthController@showLogin');
+
+	Route::post('login', [
+		'uses' => 'AuthController@login', 
+		'before' => 'attempt'
+	]);
+
+	Route::get('logout', [
+		'uses' => 'AuthController@logout',
+		'before' => 'auth'
+	]);
+
+
+
+	Route::get('/', [
+		'before'=>'auth', 
+		function()
+		{
+			return "Esto es el home";
+		}
+	]);
+
+	/*
+	|---------------------------------------------------------------------------
+	| Section for operations in Pages, calling PagesController
+	|---------------------------------------------------------------------------
+	*/
+
+	Route::get('paginas', [
+		'uses' => 'PagesController@show',
+		'before' => 'auth'
+	]);
+
+	Route::get('paginas/del/{id}', [
+		'uses' => 'PagesController@deletePage',
+		'before' => 'auth'
+	]);
+
+	Route::post('paginas/update', [
+		'uses' => 'PagesController@updatePage',
+		'before' => 'auth'
+	]);
+
+
+
+	Route::get('perfil', [
+		'before'=>'auth',
+		function()
+		{
+			return View::make('perfil');
+		}
+	]);
+
 });
-
-Route::post('crawl/login', [
-	'uses' => 'AuthController@login', 
-	'before' => 'attempt'
-]);
-
-Route::get('crawl/logout', [
-	'uses' => 'AuthController@logout',
-	'before' => 'auth'
-]);
-
-Route::get('crawl', [
-	'before'=>'auth', 
-	function()
-	{
-		return View::make('pages');
-	}
-]);
-
-Route::get('crawl/paginas', [
-	'before'=>'auth',
-	function()
-	{
-		return View::make('pages');
-	}
-]);
-
-Route::get('crawl/perfil', [
-	'before'=>'auth',
-	function()
-	{
-		return View::make('perfil');
-	}
-]);

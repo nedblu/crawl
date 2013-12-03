@@ -17,56 +17,38 @@
 					</tr>
 				</thead>
 				<tbody>
+					@if($pages)
+					{{ Form::open(['url'=> 'crawl/paginas/update']) }}
+						@foreach($pages as $page)
+							<tr>
+								<td>{{ $page->name }}</td>
+								<td>
+									<a href=""><span class="icon-pagespencil"></span></a> | <a href="{{ URL::to('crawl/paginas/del/' . $page->id) }}"><span class="icon-pagesremove"></span></a>
+								</td>
+								<td>
+									@if($page->status == 1)
+										{{ Form::checkbox($page->id, 'status' , 'checked') }}
+									@else
+										{{ Form::checkbox($page->id, 'status') }}
+									@endif
+								</td>
+							</tr>
+						@endforeach
+
+					@else
 					<tr>
-						<td>Home</td>
-						<td>
-							<a href=""><span class="icon-pagespencil"></span></a> | <a href=""><span class="icon-pagesremove"></span></a>
-						</td>
-						<td>
-							<p>
-							    <input type="checkbox"/>
-							</p>
-						</td>
+						<td colspan="3"> Aun no hay páginas hechas... ¿Por qué no creas una?</td>
 					</tr>
-					<tr>
-						<td>Misión</td>
-						<td>
-							<a href=""><span class="icon-pagespencil"></span></a> | <a href=""><span class="icon-pagesremove"></span></a>
-						</td>
-						<td>
-							<p>
-							    <input type="checkbox" checked/>
-							</p>
-						</td>
-					</tr>
-					<tr>
-						<td>Visión</td>
-						<td>
-							<a href=""><span class="icon-pagespencil"></span></a> | <a href=""><span class="icon-pagesremove"></span></a>
-						</td>
-						<td>
-							<p>
-							    <input type="checkbox"/>
-							</p>
-						</td>
-					</tr>
-					<tr class="tr_last">
-						<td>About</td>
-						<td>
-							<a href=""><span class="icon-pagespencil"></span></a> | <a href=""><span class="icon-pagesremove"></span></a>
-						</td>
-						<td>
-							<p>
-							    <input type="checkbox" checked/>
-							</p>
-						</td>
-					</tr>
+
+					@endif
 				</tbody>
 			</table>
 			<div id="save_changes">
 				<a href=""><span class="icon-pagesclose"> Cancelar</a>
 				<a href=""><span class="icon-pagesdisk"> Guardar Cambios</a>
 			</div>
+				{{ Form::submit('actualizar') }}
+			{{ Form::close() }}
 		</div>
 	</div>
 @stop

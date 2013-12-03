@@ -2,6 +2,18 @@
 
 class AuthController extends BaseController {
 
+	public function showLogin()
+	{
+		if(Auth::check())
+		{
+			return Redirect::to('crawl');
+		}
+		else
+		{
+			return View::make('login');
+		}
+	}
+
 	public function login()
 	{
 
