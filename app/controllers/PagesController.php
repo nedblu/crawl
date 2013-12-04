@@ -4,14 +4,61 @@ class PagesController extends BaseController {
 
 	public function showNewPage()
 	{
+
 		return View::make('new');
+
 	}
+
 	public function showPage()
 	{
 
 		$pages = Page::all();
 		return View::make('pages')->with('pages', $pages);
 
+	}
+
+	public function showEditPage($id)
+	{
+
+		$page = Page::find($id);
+		return View::make('edit')->with('page', $page);
+	}
+
+	public function editPage()
+	{
+		$id = Input::get('id');
+
+		$editPage = [
+			'name'  	=> Input::get('name'),
+			'title' 	=> Input::get('title'),
+			'keywords' 	=> Input::get('keywords'),
+			'layout'	=> Input::get('layout'),
+			'content' 	=> Input::get('content'),
+			'status'	=> false
+		];
+
+		
+		$rules = [
+			'name'  	=> 'required',
+			'title' 	=> 'required',
+			'keywords' 	=> 'required',
+			'layout'	=> 'required',
+			'content' 	=> 'required'
+		];
+
+		$v = Validator::make($editPage, $rules);
+
+		if( $v->fails() )
+		{
+			return Redirect::to('crawl/paginas/edit/' . $id)->withErrors($v);
+		}
+		else
+		{
+			
+			Page::where('id',$id)->update($editPage);
+
+			return Redirect::to('crawl/paginas');
+		}
 	}
 
 	public function deletePage($id)
@@ -41,8 +88,7 @@ class PagesController extends BaseController {
 
 			foreach ($changes['page'] as $change) 
 			{
-				DB::table('pages')->where('id', $change)->update(['status' => true]);
-				echo "Actualizada";
+				Page::where('id', $change)->update(['status' => true]);
 			}
 			
 			return Redirect::to('crawl/paginas');
@@ -62,6 +108,7 @@ class PagesController extends BaseController {
 			'status'	=> false
 		];
 
+		
 		$rules = [
 			'name'  	=> 'required',
 			'title' 	=> 'required',
@@ -74,12 +121,13 @@ class PagesController extends BaseController {
 
 		if( $v->fails() )
 		{
-			var_dump($v->messages());
-			return Redirect::to('crawl/paginas/new')->withErrors();
+			return Redirect::to('crawl/paginas/new')->withErrors($v->messages);
 		}
 		else
 		{
-			DB::table('pages')->insert($newPage);
+			$page = new Page($newPage);
+			$page->save();
+
 			return Redirect::to('crawl/paginas');
 		}
 	}

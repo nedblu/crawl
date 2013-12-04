@@ -78,13 +78,23 @@ Route::group(['prefix' => 'crawl'], function(){
 		'before' => 'auth|csrf'
 	]);
 
+	Route::get('paginas/edit/{id}', [
+		'uses' => 'PagesController@showEditPage',
+		'before' => 'auth'
+	]);
+
+	Route::post('paginas/edit/', [
+		'uses' => 'PagesController@editPage',
+		'before'=> 'auth|csrf'
+	]);
+
 
 	/*
 	|---------------------------------------------------------------------------
 	| Section for operations in Profile, calling ProfileController
 	|---------------------------------------------------------------------------
 	*/
-	
+
 	Route::get('perfil', [
 		'before'=>'auth',
 		function()
