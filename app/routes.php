@@ -88,6 +88,8 @@ Route::group(['prefix' => 'crawl'], function(){
 	|---------------------------------------------------------------------------
 	*/
 
+
+
 	Route::get('perfil', [
 		'before'=>'auth',
 		function()
