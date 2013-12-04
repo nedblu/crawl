@@ -26,7 +26,7 @@ class PagesController extends BaseController {
 		if( sizeof($changes) == 1 )
 		{
 			
-			Page::where('status',true)->update(['status' => false])
+			Page::where('status',true)->update(['status' => false]);
 			//return Redirect::to('crawl/paginas');
 		}
 		else
