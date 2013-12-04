@@ -20,6 +20,7 @@ class CreateTableUsers extends Migration {
 			$table->string('password', 64);
 			$table->string('email', 60)->unique;
 			$table->integer('userlevel');
+			$table->string('image',100);
 
 			$table->timestamps();
 		});

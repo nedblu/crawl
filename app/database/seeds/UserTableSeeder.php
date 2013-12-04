@@ -10,7 +10,8 @@ class UserTableSeeder extends Seeder {
 				'username' => 'admin',
 				'password' => Hash::make('password'), 
 				'email' => 'carlosaguilarnet@gmail.com', 
-				'userlevel' => 1
+				'userlevel' => 1,
+				'image' => 'emilmdos.png'
 			]
 		];
 

@@ -25,7 +25,8 @@
 			</div>
 			<div id="user">
 				<figure>
-					{{ HTML::image('emilmdos.png','Profile Picture') }}
+					<?php $image = Auth::user()->image ?>
+					{{ HTML::image( $image,'Profile Picture') }}
 				</figure>
 			</div>
 		</div>

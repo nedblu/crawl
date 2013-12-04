@@ -69,6 +69,11 @@ Route::group(['prefix' => 'crawl'], function(){
 	]);
 
 
+	/*
+	|---------------------------------------------------------------------------
+	| Section for operations in Profile, calling ProfileController
+	|---------------------------------------------------------------------------
+	*/
 
 	Route::get('perfil', [
 		'before'=>'auth',
