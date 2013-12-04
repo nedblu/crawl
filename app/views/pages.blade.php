@@ -6,7 +6,7 @@
 	<div id="pages_box">
 		<div id="table_box">
 			<div id="new_page">
-				<a href=""><span class="icon-pagesplus"></span> Nueva Página</a>
+				<a href="{{ URL::to('crawl/paginas/new') }}"><span class="icon-pagesplus"></span> Nueva Página</a>
 			</div>
 			<table>
 				<thead>
