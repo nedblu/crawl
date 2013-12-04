@@ -78,8 +78,12 @@ class PagesController extends BaseController {
 		{
 			
 			Page::where('status',true)->update(['status' => false]);
+<<<<<<< HEAD
+			//return Redirect::to('crawl/paginas');
+=======
 			return Redirect::to('crawl/paginas');
 
+>>>>>>> 2581e0e70b2d57a88245110a6f2c4da8ca8f76a7
 		}
 		else
 		{

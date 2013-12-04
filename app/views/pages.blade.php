@@ -23,7 +23,7 @@
 							<tr>
 								<td>{{ $page->name }}</td>
 								<td>
-									<a href=""><span class="icon-pagespencil"></span></a> | <a href="{{ URL::to('crawl/paginas/del/' . $page->id) }}"><span class="icon-pagesremove"></span></a>
+									<a href="{{ URL::to('crawl/paginas/edit/' . $page->id) }}"><span class="icon-pagespencil"></span></a> | <a href="{{ URL::to('crawl/paginas/del/' . $page->id) }}"><span class="icon-pagesremove"></span></a>
 								</td>
 								<td>
 									@if($page->status == 1)

@@ -56,15 +56,16 @@
 		<section class="conf_item">
 			<script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
 			<script type="text/javascript">
-				bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+				bkLib.onDomLoaded(function() { 
+					new nicEditor({buttonList : ['bold', 'italic','underline','left','center', 'right','justify','ol','ul','fontSize','fontFormat','xhtml','image','upload','link','unlink','forecolor','bgcolor']}).panelInstance('area');
+				});
 			</script>
 
 			<h2>Contenido</h2>
-			<textarea name="content" style="width: 100%;background-color: white;height: 400px;"></textarea>
+			<textarea name="content" id="area" style="width: 100%;background-color: white;height: 400px;"></textarea>
 		</section>
 		<div id="data_actions">
-			<a href=""><span class="icon-pagesclose"> Cancelar</a>
-			<a href=""><span class="icon-pagesdisk"> Guardar Cambios</a>
+			<a href="{{ URL::to('crawl/paginas')}}"><span class="icon-pagesclose"> Cancelar</a>
 			<button type="submit"><span class="icon-pagesdisk"> Guardar Cambios</button>
 		</div>
 	{{ Form::close() }}
