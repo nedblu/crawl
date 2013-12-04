@@ -45,9 +45,9 @@
 			</table>
 			<div id="save_changes">
 				<a href=""><span class="icon-pagesclose"> Cancelar</a>
-				<a href=""><span class="icon-pagesdisk"> Guardar Cambios</a>
+				<button type="submit"><span class="icon-pagesdisk"> Guardar Cambios</button>
 			</div>
-				{{ Form::submit('actualizar') }}
+				
 			{{ Form::close() }}
 		</div>
 	</div>

@@ -1,4 +1,4 @@
-@extends('templates.default.main')
+@extends('templates.default.profile')
 
 @section('contenido')
 	<div id="profile_title">
@@ -32,7 +32,7 @@
 			Selecciona la imagen para tu perfil
 		</p>
 		<div class="up_load_box">
-			<img src="emilmdos.png" alt=""><!--
+			{{ HTML::image('emilmdos.png','Perfil') }}<!--
 			--><div class="up_load_section">
 				<div class="up_load_button">
 					<input type="file" name="pic" accept="image/*">

@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>Este es el tamplate principal</title>
 	{{ HTML::style('css/template.css') }}
-	{{ HTML::style('css/pages.css') }}
+	{{ HTML::style('css/profile.css') }}
 	{{ HTML::script('js/jquery-1.10.2.min.js') }}
 	{{ HTML::script('js/template.js') }}
 </head>

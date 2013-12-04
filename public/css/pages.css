@@ -26,24 +26,27 @@ h1 {
   padding: 1em 0;
 }
 #table_box #new_page a,
-#table_box #save_changes a {
+#table_box #save_changes a,
+#table_box #save_changes button[type="submit"] {
   text-decoration: none;
   color: #656d78;
   padding: 1em 0;
 }
 #table_box #new_page a span:before,
-#table_box #save_changes a span:before {
+#table_box #save_changes a span:before,
+#table_box #save_changes button[type="submit"] span:before {
   color: #16a085;
 }
 #table_box #new_page a .icon-pagesplus:before,
-#table_box #save_changes a .icon-pagesplus:before {
+#table_box #save_changes a .icon-pagesplus:before,
+#table_box #save_changes button[type="submit"] .icon-pagesplus:before {
   font-size: 0.8em;
 }
 #table_box #save_changes {
   text-align: center;
   margin: 2em 0;
 }
-#table_box #save_changes a {
+#table_box #save_changes a , #table_box #save_changes button[type="submit"] {
   margin: 0 1em;
   text-decoration: none;
   color: #656d78;
