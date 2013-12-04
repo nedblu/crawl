@@ -2,7 +2,11 @@
 
 class PagesController extends BaseController {
 
-	public function show()
+	public function showNewPage()
+	{
+		return View::make('new');
+	}
+	public function showPage()
 	{
 
 		$pages = Page::all();
@@ -26,19 +30,23 @@ class PagesController extends BaseController {
 		if( sizeof($changes) == 1 )
 		{
 			
-			Page::where('status',true)->update(['status' => false])
-			//return Redirect::to('crawl/paginas');
+			Page::where('status',true)->update(['status' => false]);
+			return Redirect::to('crawl/paginas');
+
 		}
 		else
 		{
-			var_dump($changes['page']);
+
+			DB::update("UPDATE pages SET status=0");
 
 			foreach ($changes['page'] as $change) 
 			{
 				DB::table('pages')->where('id', $change)->update(['status' => true]);
-				echo "Actaulizada";
+				echo "Actualizada";
 			}
-			//return Redirect::to('crawl/paginas');
+			
+			return Redirect::to('crawl/paginas');
+
 		}
 	}
 	
@@ -67,7 +75,7 @@ class PagesController extends BaseController {
 		if( $v->fails() )
 		{
 			var_dump($v->messages());
-			//return Redirect::to('crawl/paginas/new')->withErrors();
+			return Redirect::to('crawl/paginas/new')->withErrors();
 		}
 		else
 		{

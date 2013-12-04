@@ -63,8 +63,7 @@
 			<textarea name="content" style="width: 100%;background-color: white;height: 400px;"></textarea>
 		</section>
 		<div id="data_actions">
-			<a href=""><span class="icon-pagesclose"> Cancelar</a>
-			<a href=""><span class="icon-pagesdisk"> Guardar Cambios</a>
+			<a href="{{ URL::to('crawl/paginas')}}"><span class="icon-pagesclose"> Cancelar</a>
 			<button type="submit"><span class="icon-pagesdisk"> Guardar Cambios</button>
 		</div>
 	{{ Form::close() }}

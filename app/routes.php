@@ -54,7 +54,7 @@ Route::group(['prefix' => 'crawl'], function(){
 	*/
 
 	Route::get('paginas', [
-		'uses' => 'PagesController@show',
+		'uses' => 'PagesController@showPage',
 		'before' => 'auth'
 	]);
 
@@ -65,20 +65,17 @@ Route::group(['prefix' => 'crawl'], function(){
 
 	Route::post('paginas/update', [
 		'uses' => 'PagesController@updatePage',
-		'before' => 'auth'
+		'before' => 'auth|csrf'
 	]);
 
 	Route::get('paginas/new', [
-		'before' => 'auth',
-		function()
-		{
-			return View::make('new');
-		}
+		'uses' => 'PagesController@showNewPage',
+		'before' => 'auth'
 	]);
 
 	Route::post('paginas/new', [
 		'uses' => 'PagesController@newPage',
-		'before' => 'auth'
+		'before' => 'auth|csrf'
 	]);
 
 
@@ -87,9 +84,7 @@ Route::group(['prefix' => 'crawl'], function(){
 	| Section for operations in Profile, calling ProfileController
 	|---------------------------------------------------------------------------
 	*/
-
-
-
+	
 	Route::get('perfil', [
 		'before'=>'auth',
 		function()
