@@ -10,7 +10,7 @@ class ConfigController extends BaseController {
 
 	public function saveConfig()
 	{
-		
+		return "HOLA";
 
 	}
 
