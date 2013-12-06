@@ -13,14 +13,14 @@ ul {
 /* demo
 /*/
 
-
+/*
 body {
     font-size: 16px;
     font-family: 'Helvetica Neue', Arial, sans-serif;
     color: #444;
     margin: 30px 40px;
 }
-
+*/
 .controls {
     margin-bottom: 20px;
 }
@@ -30,7 +30,7 @@ body {
 /*/
 
 .gridster ul {
-    background-color: #EFEFEF;/*Color del fondo del DnD*/
+    background-color: #ccc;/*Color del fondo del DnD*/
 }
 
 .gridster li {
@@ -43,7 +43,7 @@ body {
 
 .gridster {
     margin: 0 auto;
-    opacity: .8;
+    opacity: .9;
     -webkit-transition: opacity .6s;
     -moz-transition: opacity .6s;
     -o-transition: opacity .6s;

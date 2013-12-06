@@ -3,6 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>Este es el tamplate de configuraciones</title>
+	{{ HTML::style('css/template.css') }}
+	{{ HTML::style('css/profile.css') }}
 	{{ HTML::style('css/dnd.css') }}
 	{{ HTML::style('css/dnd_area.css') }}
 	{{ HTML::script('js/jquery-1.10.2.min.js') }}

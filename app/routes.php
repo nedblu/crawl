@@ -109,10 +109,15 @@ Route::group(['prefix' => 'crawl'], function(){
 	*/
 
 	Route::get('configuracion', [
-		'before' =>'auth', 
+		'before' =>'auth',
 		function(){
 			$paginas = DB::table('pages')->where('status','=',true)->get();
 			return View::make('configure')->with(['pagesLoad'=>$paginas]);
 		}]);
+
+	Route::post('configuracion/save', [
+		'before' => 'auth',
+		'uses' => 'ConfigController@saveConfig',
+		]);
 
 });

@@ -4,6 +4,7 @@
 	<div id="profile_title">
 		<h1>Configuración</h1>
 	</div>
+    {{ Form::open(['url' => 'crawl/configuracion/save']) }}
 	<div class="data_item">
 		<h2>¿Tienes un favicon?</h2>
 		<p>
@@ -63,9 +64,8 @@
                     dataOrder[pos] = s[i].data_name;
                     alert('Elemento '+dataOrder[pos]+' guardado en la posicion '+pos);
                 };
-
-                $('#log').val(JSON.stringify(s));
             });
         });
     </script>
+    {{ Form::close() }}
 @stop
