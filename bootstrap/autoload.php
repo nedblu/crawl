@@ -56,7 +56,9 @@ Patchwork\Utf8\Bootup::initMbstring();
 |
 */
 
-Illuminate\Support\ClassLoader::register();
+Illuminate\Support\ClassLoader::register(
+
+	);
 
 /*
 |--------------------------------------------------------------------------

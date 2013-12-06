@@ -96,8 +96,13 @@ Route::group(['prefix' => 'crawl'], function(){
 	*/
 
 	Route::get('perfil', [
-		'uses' => 'ProfileController@index',
-		'before'=>'auth'
+		'uses' 	 => 'ProfileController@index',
+		'before' =>'auth'
+	]);
+
+	Route::post('perfil/update', [
+		'uses' 	 => 'ProfileController@update',
+		'before' => 'auth'
 	]);
 
 

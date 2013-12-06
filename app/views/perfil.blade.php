@@ -8,13 +8,14 @@
 	<div class="data_item">
 		<h2>Nombre</h2>
 		<p>
-			<label for="nombre">Dinos ¿Cual es tu nombre?</label><input type="text" name="nombre" autofocus placeholder="nombre" value="{{ $fullname }}">
+			<label for="nombre">Dinos ¿Cual es tu nombre?</label><input type="text" name="nombre" autofocus placeholder="nombre" value="{{ $fullname }}">{{ $errors->first('name') }}
 		</p>
 	</div>
 	<div class="data_item">
 		<h2>Correo Electrónico</h2>
 		<p>
 			<label for="nombre">¿A donde te enviaremos notificaciones?</label><input type="email" name="email" value="{{ $email }}" placeholder="email@crawl.com">
+			{{ $errors->first('email') }}
 		</p>
 	</div>
 	<div class="data_item">
@@ -33,7 +34,7 @@
 			Selecciona la imagen para tu perfil
 		</p>
 		<div class="up_load_box">
-			{{ HTML::image($image,'Perfil') }}<!--
+			{{ HTML::image( '/assets/profile_imgs/' . Auth::user()->username . '/thumb100-' . Auth::user()->image,'Profile Picture') }}<!--
 			--><div class="up_load_section">
 				<div class="up_load_button">
 					<input type="file" name="pic" accept="image/*">
