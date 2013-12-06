@@ -3,10 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<title>Este es el tamplate de configuraciones</title>
-	{{ HTML::style('css/template.css') }}
-	{{ HTML::style('css/pages.css') }}
+	{{ HTML::style('css/dnd.css') }}
+	{{ HTML::style('css/dnd_area.css') }}
 	{{ HTML::script('js/jquery-1.10.2.min.js') }}
 	{{ HTML::script('js/template.js') }}
+	
 </head>
 <body>
 	<header>
@@ -36,7 +37,7 @@
 		<section id="menu">
 			<nav>
 				<ul>
-					<li>{{ HTML::link('crawl/config', 'Configuracion') }}</li>
+					<li>{{ HTML::link('crawl/configuracion', 'Configuracion') }}</li>
 					<li>{{ HTML::link('crawl/paginas','Páginas') }}</li>
 					<li><a href="">Widgets</a></li>
 					<li><a href="">Usuarios</a></li>

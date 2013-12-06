@@ -35,7 +35,7 @@
 		<section id="menu">
 			<nav>
 				<ul>
-					<li><a href="">Configuración</a></li>
+					<li>{{ HTML::link('crawl/configuracion', 'Configuracion') }}</li>
 					<li>{{ HTML::link('crawl/paginas','Páginas') }}</li>
 					<li><a href="">Widgets</a></li>
 					<li><a href="">Usuarios</a></li>

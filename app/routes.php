@@ -103,4 +103,19 @@ Route::group(['prefix' => 'crawl'], function(){
 		}
 	]);
 
+
+
+	/*
+	|---------------------------------------------------------------------------
+	| Section for operations in Configure, calling ConfigureController
+	|---------------------------------------------------------------------------
+	*/
+
+	Route::get('configuracion', [
+		'before' =>'auth', 
+		function(){
+			$paginas = DB::table('pages')->where('status','=',true)->get();
+			return View::make('configure')->with(['pagesLoad'=>$paginas]);
+		}]);
+
 });
