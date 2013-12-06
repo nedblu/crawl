@@ -54,7 +54,7 @@ Route::group(['prefix' => 'crawl'], function(){
 	*/
 
 	Route::get('paginas', [
-		'uses' => 'PagesController@showPage',
+		'uses' => 'PagesController@index',
 		'before' => 'auth'
 	]);
 
@@ -96,11 +96,8 @@ Route::group(['prefix' => 'crawl'], function(){
 	*/
 
 	Route::get('perfil', [
-		'before'=>'auth',
-		function()
-		{
-			return View::make('perfil');
-		}
+		'uses' => 'ProfileController@index',
+		'before'=>'auth'
 	]);
 
 });

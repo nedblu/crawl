@@ -1,19 +1,19 @@
 <?php
 
-class PagesController extends BaseController {
+class PagesController extends \BaseController {
 
-	public function showNewPage()
-	{
-
-		return View::make('new');
-
-	}
-
-	public function showPage()
+	public function index()
 	{
 
 		$pages = Page::all();
 		return View::make('pages')->with('pages', $pages);
+
+	}
+	
+	public function showNewPage()
+	{
+
+		return View::make('new');
 
 	}
 
@@ -72,7 +72,6 @@ class PagesController extends BaseController {
 	public function updatePage()
 	{
 		$changes = Input::all();
-		var_dump($changes);
 
 		if( sizeof($changes) == 1 )
 		{
