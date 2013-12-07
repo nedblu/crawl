@@ -4,11 +4,11 @@
 	<div id="profile_title">
 		<h1>Configuración</h1>
 	</div>
-    {{ Form::open(['url' => 'crawl/configuracion/save']) }}
+   
 	<div class="data_item">
 		<h2>¿Tienes un favicon?</h2>
 		<p>
-			<label for="favicon">Recuerda que debe ser una imagen de 16x16 pixeles y en formato .ico</label><input type="fil" autofocus placeholder="nombre">
+			<label for="favicon">Recuerda que debe ser una imagen de 16x16 pixeles y en formato .ico</label><input type="file" autofocus placeholder="nombre">
 		</p>
 	</div>
 	<div class="data_item">
@@ -22,6 +22,7 @@
                     <?php $i=1; ?>
 	        		@foreach ($pagesLoad as $pageData)
 	        			<li data-row="{{ $i }}" data-col="1" data-sizex="1" data-sizey="1" data-name="{{ $pageData->id}}">{{ $pageData->name}}</li>
+                         {{ Form::hidden('hideId'.$i,'', ['id'=>'hideId'.$i]) }}
                         <?php $i++; ?>
 	        		@endforeach
 	        	@else
@@ -34,11 +35,11 @@
     <div class="data_item">
     	<h2>Escribe un pie de tu página</h2>
     	<p>
-    		<label for="textDescription">Aqui podrás especificar brevemente tu sitio web :)</label><textarea col="50" row="50"></textarea>
+    		<label for="textDescription">Aqui podrás especificar brevemente tu sitio web :)</label><textarea col="50" row="150"></textarea>
     	</p>
     </div>
     <div class="">
-        <button class="js-seralize">Serialize</button>
+        <div class="js-seralize">Serialize</div>
     </div>
 
     <textarea id="log"></textarea>
@@ -46,7 +47,6 @@
     {{ HTML::script('js/dnd.js') }}
     <script type="text/javascript">
     var gridster;
-
         $(function(){
 
             gridster = $(".gridster ul").gridster({
@@ -56,16 +56,16 @@
 
             $('.js-seralize').on('click', function() {
                 var s = gridster.serialize();
-                var size = s.length;
-                var dataOrder = new Array(size);
-                
+                //var tis = '1';
+                //document.getElementById('hideId'+tis).value = s[0].row;
                 for (var i = 0; i < s.length; i++) {
-                    var pos = parseInt(s[i].row,10)-1;
-                    dataOrder[pos] = s[i].data_name;
-                    alert('Elemento '+dataOrder[pos]+' guardado en la posicion '+pos);
+                    var pos = s[i].row;
+                    alert(pos);
+                    document.getElementById('hideId'+pos).value =s[i].data_name;
                 };
+            
             });
         });
     </script>
-    {{ Form::close() }}
+    
 @stop

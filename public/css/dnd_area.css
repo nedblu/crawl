@@ -63,5 +63,6 @@ body {
 
 .gridster .preview-holder {
     border: none!important;
-    background: red!important;
+    background: rgb(27,204,147)!important;
+    /*background: red!important;/*cambia el color del place-holder del DnD*/
 }

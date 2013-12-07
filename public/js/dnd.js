@@ -1611,7 +1611,7 @@
               'data-col': this.$player.attr('data-col'),
               css: {
                   width: coords.width,
-                  height: coords.height
+                  height: coords.height,
               }
         }).appendTo(this.$el);
 

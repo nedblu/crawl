@@ -125,4 +125,5 @@ Route::group(['prefix' => 'crawl'], function(){
 		'uses' => 'ConfigController@saveConfig',
 		]);
 
+
 });
