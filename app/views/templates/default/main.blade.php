@@ -38,7 +38,7 @@
 					<li>{{ HTML::link('crawl/configuracion', 'Configuracion') }}</li>
 					<li>{{ HTML::link('crawl/paginas','Páginas') }}</li>
 					<li><a href="">Widgets</a></li>
-					<li><a href="">Usuarios</a></li>
+					<li>{{ HTML::link('crawl/users','Usuarios') }}</li>
 				</ul>
 			</nav>
 		</section>

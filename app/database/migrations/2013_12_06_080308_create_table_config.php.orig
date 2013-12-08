@@ -13,13 +13,16 @@ class CreateTableConfig extends Migration {
 	{
 		//
 		Schema::create('config', function($table){
-			$table->increments('id');
 			
 			$table->increments('id')->unique();
 			
+<<<<<<< HEAD
+			$table->text('description');
+=======
 			$table->string('page_name', 150);
 			$table->string('position');
 			$table->string('route', 300);
+>>>>>>> 712eb1e19cf7710fd01b6039ac7d29bd08d06f51
 
 			$table->timestamps();
 		});
