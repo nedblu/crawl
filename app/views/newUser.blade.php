@@ -25,6 +25,12 @@
 			</p>
 		</section>
 		<section class="conf_item">
+			<h2>Confirmación</h2>
+			<p>
+				<label for="password">Vuelve a escribirla para estar seguro que no cometiste un error.</label><input type="password" name="password_confirmation" placeholder="Password" required>
+			</p>
+		</section>
+		<section class="conf_item">
 			<h2>Correo electrónico</h2>
 			<p>
 				<label for="email">¿Dónde te enviamos información de tu cuenta?</label><input type="email" name="email" placeholder="as@as.com" required>

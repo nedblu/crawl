@@ -96,12 +96,12 @@ Route::group(['prefix' => 'crawl'], function(){
 	*/
 
 	Route::get('perfil', [
-		'uses' 	 => 'ProfileController@index',
+		'uses' 	 => 'UserController@index',
 		'before' =>'auth'
 	]);
 
 	Route::post('perfil/update', [
-		'uses' 	 => 'ProfileController@update',
+		'uses' 	 => 'UserController@update',
 		'before' => 'auth'
 	]);
 
@@ -130,13 +130,18 @@ Route::group(['prefix' => 'crawl'], function(){
 	*/
 
 	Route::get('usuarios', [
-		'uses' => 'UserController@index',
+		'uses' => 'UserController@showlist',
 		'before' => 'auth'
 	]);
 
 	Route::get('usuarios/new', [
-		'uses' => 'UserController@showNew',
+		'uses' => 'UserController@newUser',
 		'before' => 'auth'
+	]);
+
+	Route::post('usuarios/create', [
+		'uses' => 'UserController@create',
+		'before' => 'auth|csrf'
 	]);
 
 });
