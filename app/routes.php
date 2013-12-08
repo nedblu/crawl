@@ -105,8 +105,6 @@ Route::group(['prefix' => 'crawl'], function(){
 		'before' => 'auth'
 	]);
 
-
-
 	/*
 	|---------------------------------------------------------------------------
 	| Section for operations in Configure, calling ConfigureController
@@ -125,5 +123,20 @@ Route::group(['prefix' => 'crawl'], function(){
 		'uses' => 'ConfigController@saveConfig',
 		]);
 
+	/*
+	|---------------------------------------------------------------------------
+	| Section for operations in Users, calling UsersController
+	|---------------------------------------------------------------------------
+	*/
+
+	Route::get('usuarios', [
+		'uses' => 'UserController@index',
+		'before' => 'auth'
+	]);
+
+	Route::get('usuarios/new', [
+		'uses' => 'UserController@showNew',
+		'before' => 'auth'
+	]);
 
 });

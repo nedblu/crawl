@@ -79,7 +79,7 @@ html {
   text-align: center;
   padding: 1em 0;
 }
-#data_actions a {
+#data_actions a, #data_actions button[type="submit"] {
   margin: 0 1em;
   text-decoration: none;
   color: #656d78;
@@ -91,10 +91,10 @@ html {
   border-radius: 4px;
   padding: 0.5em;
 }
-#data_actions a span:before {
+#data_actions a span:before #data_actions button[type="submit"] span:before {
   color: #16a085;
 }
-#data_actions a .icon-pagesclose:before {
+#data_actions a .icon-pagesclose:before, #data_actions button[type="submit"] .icon-pagesclose:before {
   color: #e74c3c;
 }
 [class*="icon-pages"] {
