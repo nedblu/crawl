@@ -17,27 +17,21 @@ class ProfileController extends \BaseController {
 		$flag_pic = false;
 		$flag_pas = false;
 
-		$data_update = [
-			$name 	= Input::get('nombre'),
-			$email 	= Input::get('email'),
-			$pass	= Input::get('password'),
-			$conf	= Input::get('confirm'),
-			$pic 	= Input::file('pic')
-		]; 
-	
+		$update_data = Input::all();
+		
 		$path = 'public/assets/profile_imgs/' . Auth::user()->username;
 
-		if(!file_exists($path))
+		if( !file_exists($path) )
 		{
 			mkdir($path, 0700);
 		}
 		
-		if(!empty($pic))
+		if( !empty($update_data['pic']) )
 		{
 			$destinationPath = $path . '/';
-			$fileName = Auth::user()->username . "." . $pic->getClientOriginalExtension();
-			$pic->move($destinationPath, $fileName);
-
+			$fileName = Auth::user()->username . "." . $update_data['pic']->getClientOriginalExtension();
+			$update_data['pic']->move($destinationPath, $fileName);
+		
 			$mythumb = new thumb();
 			$mythumb->loadImage($path . '/' . $fileName);
 			
@@ -45,37 +39,38 @@ class ProfileController extends \BaseController {
 			$mythumb->save($path . '/' . 'thumb100-' . $fileName);
 
 			$mythumb->crop(48, 48);
-			$mythumb->save($path . '/'. 'thumb48-' . $fileName);
+			$mythumb->save($path . '/' . 'thumb48-' . $fileName);
 
 			$flag_pic = true;
 		}
 		
 
-		if(!empty($pass) && !empty($conf) && ($pass == $conf))
+		if(!empty($update_data['password']) && !empty($update_data['confirm']))
 		{
-			$flag_pas = true;
+			if($update_data['password'] == $update_data['confirm'])
+				$flag_pas = true;
 		}
 
 		if(($flag_pas == true) && ($flag_pic == true))
 		{
 			$id = Auth::user()->id;
 			$data = [
-				'fullname' 	=> $name,
-				'email' => $email,
-				'password' => Hash::make($pass),
+				'fullname' 	=> $update_data['nombre'],
+				'email' => $update_data['email'],
+				'password' => Hash::make($update_data['password']),
 				'image' => $fileName 
 			];
 
 			User::where('id', $id)->update($data);
-			return Redirect::to('crawl/perfil'); 
+			return Redirect::to('crawl/perfil');
 		}
 		elseif ($flag_pas == true) 
 		{
 			$id = Auth::user()->id;
 			$data = [
-				'fullname' 	=> $name,
-				'email' => $email,
-				'password' => Hash::make($pass)
+				'fullname' 	=> $update_data['nombre'],
+				'email' => $update_data['email'],
+				'password' => Hash::make($update_data['password'])
 			];
 
 			User::where('id', $id)->update($data);
@@ -85,8 +80,8 @@ class ProfileController extends \BaseController {
 		{
 			$id = Auth::user()->id;
 			$data = [
-				'fullname' 	=> $name,
-				'email' => $email,
+				'fullname' 	=> $update_data['nombre'],
+				'email' => $update_data['email'],
 				'image' => $fileName 
 			];
 
@@ -97,8 +92,8 @@ class ProfileController extends \BaseController {
 		{
 			$id = Auth::user()->id;
 			$data = [
-				'fullname' 	=> $name,
-				'email' => $email
+				'fullname' 	=> $update_data['nombre'],
+				'email' => $update_data['email']
 			];
 
 			User::where('id', $id)->update($data);
