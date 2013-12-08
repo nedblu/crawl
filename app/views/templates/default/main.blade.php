@@ -25,8 +25,7 @@
 			</div>
 			<div id="user">
 				<figure>
-					<?php $image = Auth::user()->image ?>
-					{{ HTML::image( $image,'Profile Picture') }}
+					{{ HTML::image( '/assets/profile_imgs/' . Auth::user()->username . '/thumb48-' . Auth::user()->image,'Profile Picture') }}
 				</figure>
 			</div>
 		</div>

@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableConfig extends Migration {
+class CreateTableNav extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,11 @@ class CreateTableConfig extends Migration {
 	public function up()
 	{
 		//
-		Schema::create('config', function($table){
+		Schema::create('nav', function($table){
 			$table->increments('id');
 			
-			$table->text('description');
+			$table->integer('page_id');
+			$table->string('position');
 
 			$table->timestamps();
 		});
@@ -29,7 +30,7 @@ class CreateTableConfig extends Migration {
 	public function down()
 	{
 		//
-		Schema::drop('config');
+		Schema::drop('nav');
 	}
 
 }

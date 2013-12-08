@@ -113,16 +113,21 @@ Route::group(['prefix' => 'crawl'], function(){
 	|---------------------------------------------------------------------------
 	*/
 
-	Route::get('configuracion', [
+	/*Route::get('configuracion', [
 		'before' =>'auth',
 		function(){
 			$paginas = DB::table('pages')->where('status','=',true)->get();
 			return View::make('configure')->with(['pagesLoad'=>$paginas]);
-		}]);
+		}]);*/
+
+	Route::get('configuracion', [
+		'uses' => 'ConfigController@showConfig',
+		'before' => 'auth'
+		]);
 
 	Route::post('configuracion/save', [
-		'before' => 'auth',
 		'uses' => 'ConfigController@saveConfig',
+		'before' => 'auth|csrf'
 		]);
 
 

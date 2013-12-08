@@ -4,18 +4,21 @@
 	<div id="profile_title">
 		<h1>Configuración</h1>
 	</div>
-   
+   {{ Form::open(['url' => 'crawl/configuracion/save', 'files' => true]) }}
 	<div class="data_item">
 		<h2>¿Tienes un favicon?</h2>
-		<p>
-			<label for="favicon">Recuerda que debe ser una imagen de 16x16 pixeles y en formato .ico</label><input type="file" autofocus placeholder="nombre">
+		<p class="favicon"> 
+            @if ($fillData)
+                {{ HTML::image('favicon.ico', 'YOlO') }}
+            @endif
+			<label for="favicon">Recuerda que debe ser una imagen de 16x16 pixeles y en formato .ico</label><input type="file" name="favicon" accept="image/*">
 		</p>
 	</div>
 	<div class="data_item">
 		<h2>Ordena tu menú</h2>
 		<p>	
 			Acomoda tus páginas según quieras se muestren en el menú
-		</p>
+		
 		<div class="gridster">
 	        <ul>
 	        	@if ($pagesLoad)
@@ -30,19 +33,21 @@
 	        	@endif           
 	        </ul>
     	</div>
+        </p>
     </div>
 
     <div class="data_item">
     	<h2>Escribe un pie de tu página</h2>
     	<p>
-    		<label for="textDescription">Aqui podrás especificar brevemente tu sitio web :)</label><textarea col="50" row="150"></textarea>
+    		<label for="descripcion">Aqui podrás especificar brevemente tu sitio web :)</label><textarea col="50" row="150" name="descripcion" required>{{ $fillData[0]->description }}</textarea>
     	</p>
     </div>
-    <div class="">
-        <div class="js-seralize">Serialize</div>
+    <div id="data_actions">
+            <a href="{{ URL::to('crawl/paginas')}}"><span class="icon-pagesclose"> Cancelar</a>
+            <button type="submit" class="j-serialize"><span class="icon-pagesdisk"> Guardar Cambios</button>
     </div>
-
-    <textarea id="log"></textarea>
+   
+    {{ Form::close() }}
     {{ HTML::script('js/jquery-1.10.2.min.js') }}
     {{ HTML::script('js/dnd.js') }}
     <script type="text/javascript">
@@ -56,14 +61,11 @@
 
             $('.js-seralize').on('click', function() {
                 var s = gridster.serialize();
-                //var tis = '1';
-                //document.getElementById('hideId'+tis).value = s[0].row;
                 for (var i = 0; i < s.length; i++) {
                     var pos = s[i].row;
                     alert(pos);
                     document.getElementById('hideId'+pos).value =s[i].data_name;
-                };
-            
+                };            
             });
         });
     </script>
