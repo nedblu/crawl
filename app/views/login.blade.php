@@ -9,7 +9,7 @@
 
 <body>
 	<div id="logo">
-		{{ HTML::image('crawlCMS_logo.png') }}
+		{{ HTML::image('img/crawlCMS_logo.png') }}
 	</div>
 
 	{{ Form::open(['url' => 'crawl/login','method'=>'post']) }}

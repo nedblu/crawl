@@ -66,7 +66,7 @@
 
 			<h2>Contenido</h2>
 			{{ $errors->first('content') }}
-			<textarea name="content" id="area"></textarea>
+			<textarea name="content" id="area" style="width: 100%;height:150px;"></textarea>
 		</section>
 		<div id="data_actions">
 			<a href="{{ URL::to('crawl/paginas')}}"><span class="icon-pagesclose"> Cancelar</a>

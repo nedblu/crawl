@@ -15,20 +15,20 @@
 	<header>
 		<div id="logo">
 			<figure>
-				{{ HTML::image('crawlCMS_logo.png','Logo') }}
+				{{ HTML::image('img/crawlCMS_logo.png','Logo') }}
 			</figure>
 		</div>
 		<div id="action">
 			<div id="account">
 				<ul>
-					<li>{{ Auth::user()->username }}</li>
+					<li>{{ Auth::user()->fullname }}</li>
 					<li>{{ HTML::link('crawl/perfil','Mi cuenta') }}</li>
 					<li>{{ HTML::link('crawl/logout', 'Salir') }}</li>
 				</ul>
 			</div>
 			<div id="user">
 				<figure>
-					{{ HTML::image( '/assets/profile_imgs/' . Auth::user()->username . '/thumb48-' . Auth::user()->image,'Profile Picture') }}
+					{{ HTML::image( 'assets/profile_imgs/' . 'thumb48-' . Auth::user()->image,'Profile Picture') }}
 				</figure>
 			</div>
 		</div>

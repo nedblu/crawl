@@ -37,7 +37,7 @@ class UserController extends \BaseController {
 				return Redirect::to('crawl/perfil')->withErrors($validator);
 		}
 
-		$path = 'public/assets/profile_imgs/';
+		$path = 'assets/profile_imgs/';
 
 		if( !file_exists($path) )
 		{
