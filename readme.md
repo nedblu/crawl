@@ -1,4 +1,5 @@
 ## Crawl CMS
+[![Build Status](https://travis-ci.org/nedblu/crawl.png?branch=master)](https://travis-ci.org/nedblu/crawl)
 
 Crawl is a simple CMS (Content Management System) to ease the life of professionals whom do not have the knowledge of programming. For us NedBlu it is important to achieve the concept ‘easy to use’ because we believe people deserve to be happy and enjoy their website how ever it best suits them.
 
