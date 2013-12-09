@@ -10,19 +10,20 @@
 	<div class="data_item">
 		<h2>Nombre</h2>
 		<p>
-			<label for="nombre">Dinos ¿Cual es tu nombre?</label><input type="text" name="nombre" autofocus placeholder="nombre" value="{{ $fullname }}">{{ $errors->first('name') }}
+			<label for="nombre">Dinos ¿Cual es tu nombre?</label><input type="text" name="nombre" autofocus placeholder="nombre" value="{{ $fullname }}" required>
 		</p>
 	</div>
 	<div class="data_item">
 		<h2>Correo Electrónico</h2>
 		<p>
-			<label for="nombre">¿A donde te enviaremos notificaciones?</label><input type="email" name="email" value="{{ $email }}" placeholder="email@crawl.com">
-			{{ $errors->first('email') }}
+			<label for="nombre">¿A donde te enviaremos notificaciones?</label><input type="email" name="email" value="{{ $email }}" placeholder="email@crawl.com" required>
 		</p>
 	</div>
 	<div class="data_item">
 		<h2>Contraseña</h2>
-		{{ '<span style="color:red; font-size:.7em;">' . $errors->first('password') .'</span>'}}
+		
+		{{ $errors->first('password') }}
+		
 		<p>
 			<label for="nombre">¿Cual será tu contraseña de acceso?</label><input name="password" type="password" placeholder="contraseña">
 		</p>

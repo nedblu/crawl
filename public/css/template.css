@@ -110,3 +110,13 @@ header #action #user figure img {
   margin: 0 auto;
   background-color: #ecf0f1;
 }
+.errors {
+  color: #BF0000;
+  background-color: #FFD9D9;
+  font-size: .8em;
+  padding: 7px;
+  border: 1px solid #FF8888;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

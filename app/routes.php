@@ -149,4 +149,9 @@ Route::group(['prefix' => 'crawl'], function(){
 		'before' => 'auth|csrf'
 	]);
 
+	Route::get('usuarios/del/{id}', [
+		'uses' => 'UserController@delete',
+		'before' => 'auth'
+	]);
+
 });

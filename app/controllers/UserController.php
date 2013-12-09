@@ -27,7 +27,7 @@ class UserController extends \BaseController {
 				'password_confirmation' => 'required'
 			];
 			$messages = [
-				'confirmed' => '* Lo sentimos, pero tus contrseñas no coinciden.'
+				'confirmed' => '<p class="errors"> Lo sentimos, pero tus contrseñas no coinciden.</p>'
 			];
 			$validator = Validator::make($update_data, $rules, $messages);
 
@@ -137,26 +137,61 @@ class UserController extends \BaseController {
 			'password' => 'required|confirmed',
 			'password_confirmation' => 'required',
 			'email' => 'email',
-			'userlevel' => 'required|min:1|max:3'
+			'userlevel' => 'required|numeric|min:1|max:3'
 		];
 
-		$validator = Validator::make($data, $rules);
+		$messages = [
+			'required' => '<p class="errors">Este campo es requerido.</p>',
+			'confirmed' => '<p class="errors"> Lo sentimos, pero tus contrseñas no coinciden.</p>',
+			'min' => '<p class="errors">Debes elegir al menos un nivel de usuario.</p>'
+		];
+
+		$validator = Validator::make($data, $rules, $messages);
 
 		if($validator->passes())
 		{
 			$user = new User;
-			$user->fullname = $data['fullname'];
-			$user->username = $data['username'];
-			$
-
+			$user->fullname  = $data['fullname'];
+			$user->username  = $data['username'];
+			$user->password  = Hash::make($data['password']);
+			$user->email 	 = $data['email'];
+			$user->userlevel = $data['userlevel'];
+			$user->image 	 = 'default.png';
 			$user->save();
 			return Redirect::to('crawl/usuarios');
 		}
 		else
 		{
-			return Redirect::to('crawl/usuarios/new')->withErrors($validator);
+			return Redirect::to('crawl/usuarios/new')->withErrors($validator)->withInput();
 
 		}
+	}
+	public function delete($id)
+	{
+		$user = User::find($id);
+
+		$data = [
+			'type' => $user->userlevel,
+		];
+
+		$rules = [
+			'type' => 'numeric|min:2'
+		];
+		$messages = [
+			'min' => '<p class="errors"><b>Advertencia:</b> No puedes eliminar al administrador principal.</p>' 
+		];
+
+		$validator = Validator::make($data, $rules, $messages);
+
+		if( $validator->passes() )
+		{
+			$user->where('id',$id)->delete();
+			return Redirect::to('crawl/usuarios');	
+		}
+		else
+			return Redirect::to('crawl/usuarios')->withErrors($validator);
+		
+		
 	}
 
 }

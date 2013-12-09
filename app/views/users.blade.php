@@ -5,6 +5,7 @@
 
 	<div id="pages_box">
 		<div id="table_box">
+			{{ $errors->first('type') }}
 			<div id="new_page">
 				<a href="{{ URL::to('crawl/usuarios/new') }}"><span class="icon-pagesplus"></span> Nuevo Usuario</a>
 			</div>
@@ -24,7 +25,7 @@
 							<tr>
 								<td>{{ $user->fullname }}</td>
 								<td>
-									<a href="{{ URL::to('crawl/paginas/edit/' . $user->id) }}"><span class="icon-pagespencil"></span></a> | <a href="{{ URL::to('crawl/paginas/del/' . $user->id) }}"><span class="icon-pagesremove"></span></a>
+									 <a href="{{ URL::to('crawl/usuarios/del/' . $user->id) }}"><span class="icon-pagesremove"></span></a>
 								</td>
 								<td>
 									{{ $user->username }}

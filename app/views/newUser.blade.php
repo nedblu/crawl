@@ -10,14 +10,14 @@
 			<h2>Nombre</h2>
 			{{ $errors->first('name') }}
 			<p>
-				<label for="nombre">¿Cómo se llama el nuevo integrante?</label><input type="text" name="fullname" autofocus placeholder="nombre" required>
+				<label for="nombre">¿Cómo se llama el nuevo integrante?</label><input type="text" name="fullname" value="{{ Input::old('fullname') }}" autofocus placeholder="nombre" required>
 			</p>
 		</section>
 		<section class="conf_item">
 			<h2>Username</h2>
 			{{ $errors->first('username') }}
 			<p>
-				<label for="username">¿Cómo le gusta que te llame?</label><input type="text" name="username" placeholder="username" required>
+				<label for="username">¿Cómo le gusta que te llame?</label><input type="text" name="username" placeholder="username" value="{{ Input::old('username') }}" required>
 			</p>
 		</section>
 		<section class="conf_item">
@@ -35,7 +35,7 @@
 			<h2>Correo electrónico</h2>
 			{{ $errors->first('email') }}
 			<p>
-				<label for="email">¿Dónde te enviamos información de tu cuenta?</label><input type="email" name="email" placeholder="as@as.com" required>
+				<label for="email">¿Dónde te enviamos información de tu cuenta?</label><input type="email" name="email" value="{{ Input::old('email') }}" placeholder="as@as.com" required>
 			</p>
 		</section>
 		<section class="conf_item">

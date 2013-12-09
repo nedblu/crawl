@@ -116,11 +116,15 @@ class PagesController extends \BaseController {
 			'content' 	=> 'required'
 		];
 
-		$v = Validator::make($newPage, $rules);
+		$messages = [
+			'required' => '<p class="errors">Este campo es requerido no debe quedar vacío.</p>'
+		];
+
+		$v = Validator::make($newPage, $rules,$messages);
 
 		if( $v->fails() )
 		{
-			return Redirect::to('crawl/paginas/new')->withErrors($v->messages);
+			return Redirect::to('crawl/paginas/new')->withErrors($v);
 		}
 		else
 		{

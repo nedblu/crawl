@@ -8,18 +8,21 @@
 	{{ Form::open(['url' => 'crawl/paginas/new']) }}
 		<section class="conf_item">
 			<h2>Nombre</h2>
+			{{ $errors->first('name') }}
 			<p>
 				<label for="nombre">¿Qué nombre tendrá tu página en el menú?</label><input type="text" name="name" autofocus placeholder="nombre">
 			</p>
 		</section>
 		<section class="conf_item">
 			<h2>Titulo</h2>
+			{{ $errors->first('title') }}
 			<p>
 				<label for="nombre">¿Cual será el titulo de tu página?</label><input type="text" name="title" placeholder="titulo">
 			</p>
 		</section>
 		<section class="conf_item">
 			<h2>Palabras Clave</h2>
+			{{ $errors->first('keywords') }}
 			<p>
 				<label for="nombre">¿Qué palabras definen tu sitio?</label><input type="text" name="keywords" placeholder="keywords">
 			</p>
@@ -62,7 +65,8 @@
 			</script>
 
 			<h2>Contenido</h2>
-			<textarea name="content" id="area" style="width: 100%;background-color: white;height: 400px;"></textarea>
+			{{ $errors->first('content') }}
+			<textarea name="content" id="area"></textarea>
 		</section>
 		<div id="data_actions">
 			<a href="{{ URL::to('crawl/paginas')}}"><span class="icon-pagesclose"> Cancelar</a>

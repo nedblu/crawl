@@ -1,11 +1,10 @@
 ## Crawl CMS
 
-Crawl is a simple CMS (Content Management System) to easier life of professions without knowledge about programming, for us is important achieve the concept easy to use because we think people deserve to be happy and enjoy their website whatever they want.
+Crawl is a simple CMS (Content Management System) to ease the life of professionals whom do not have the knowledge of programming. For us NedBlu it is important to achieve the concept ‘easy to use’ because we believe people deserve to be happy and enjoy their website how ever it best suits them.
 
 ## Technical Aspects
 
-This project is bassed on Laravel 4, a beautiful framework for artisans and it means what simple can be to use and the security is the main topic for us, for this reason we working hard to protect your website using Laravel security.
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
+This project is based on Laravel 4, a beautiful framework for artisans. Our main goal is for our clients to have the security and docile accessibility to manage their website. Therefore, we are working hard to achieve our goals using the security that Laravel provides. Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
 
 ### Contributing To Crawl
 
