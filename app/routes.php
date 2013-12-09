@@ -16,9 +16,7 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-
-
-Route::group(['prefix' => 'crawl'], function(){
+Route::group(array('prefix' => 'crawl'), function(){
 	
 	/*
 	|---------------------------------------------------------------------------
