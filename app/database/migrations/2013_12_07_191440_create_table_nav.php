@@ -16,7 +16,6 @@ class CreateTableNav extends Migration {
 			$table->increments('id');
 			
 			$table->integer('page_id');
-			$table->string('position');
 
 			$table->timestamps();
 		});

@@ -15,11 +15,7 @@ class CreateTableConfig extends Migration {
 		Schema::create('config', function($table){
 			$table->increments('id');
 			
-			$table->increments('id')->unique();
-			
-			$table->string('page_name', 150);
-			$table->string('position');
-			$table->string('route', 300);
+			$table->text('description');
 
 			$table->timestamps();
 		});
