@@ -5,7 +5,7 @@ class PagesController extends \BaseController {
 	public function index()
 	{
 
-		$pages = Page::all();
+		$pages = DB::table('pages')->get();
 		return View::make('pages')->with('pages', $pages);
 
 	}

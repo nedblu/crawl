@@ -37,7 +37,7 @@
 			Selecciona la imagen para tu perfil
 		</p>
 		<div class="up_load_box">
-			{{ HTML::image( '/assets/profile_imgs/' . Auth::user()->username . '/thumb100-' . Auth::user()->image,'Profile Picture') }}<!--
+			{{ HTML::image( '/assets/profile_imgs/' . 'thumb100-' . Auth::user()->image,'Profile Picture') }}<!--
 			--><div class="up_load_section">
 				<div class="up_load_button">
 					<input type="file" name="pic" accept="image/*">

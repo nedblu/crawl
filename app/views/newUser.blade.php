@@ -8,23 +8,24 @@
 	{{ Form::open(['url' => 'crawl/usuarios/create']) }}
 		<section class="conf_item">
 			<h2>Nombre</h2>
+			{{ $errors->first('name') }}
 			<p>
-				<label for="nombre">¿Cómo se llama el nuevo integrante?</label><input type="text" name="name" autofocus placeholder="nombre" required>
+				<label for="nombre">¿Cómo se llama el nuevo integrante?</label><input type="text" name="fullname" autofocus placeholder="nombre" required>
 			</p>
 		</section>
 		<section class="conf_item">
 			<h2>Username</h2>
+			{{ $errors->first('username') }}
 			<p>
 				<label for="username">¿Cómo le gusta que te llame?</label><input type="text" name="username" placeholder="username" required>
 			</p>
 		</section>
 		<section class="conf_item">
 			<h2>Contraseña</h2>
+			{{ $errors->first('password') }}
 			<p>
 				<label for="password">Escribe tu llave de acceso</label><input type="password" name="password" placeholder="Password" required>
 			</p>
-		</section>
-		<section class="conf_item">
 			<h2>Confirmación</h2>
 			<p>
 				<label for="password">Vuelve a escribirla para estar seguro que no cometiste un error.</label><input type="password" name="password_confirmation" placeholder="Password" required>
@@ -32,12 +33,14 @@
 		</section>
 		<section class="conf_item">
 			<h2>Correo electrónico</h2>
+			{{ $errors->first('email') }}
 			<p>
 				<label for="email">¿Dónde te enviamos información de tu cuenta?</label><input type="email" name="email" placeholder="as@as.com" required>
 			</p>
 		</section>
 		<section class="conf_item">
 			<h2>Tipo de usuario</h2>
+			{{ $errors->first('userlevel') }}
 			<p>
 				<label for="userlevel">Nivel de permisos</label>
 				{{ Form::select('userlevel', [0 => 'Seleccionar', 2=> 'Moderador', 3 => 'Editor']) }}

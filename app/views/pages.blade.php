@@ -17,8 +17,10 @@
 					</tr>
 				</thead>
 				<tbody>
-					@if($pages)
+					
 					{{ Form::open(['url'=> 'crawl/paginas/update']) }}
+					
+					@if($pages)
 						@foreach($pages as $page)
 							<tr>
 								<td>{{ $page->name }}</td>
@@ -34,13 +36,12 @@
 								</td>
 							</tr>
 						@endforeach
-
 					@else
 					<tr>
 						<td colspan="3"> Aun no hay páginas hechas... ¿Por qué no creas una?</td>
 					</tr>
-
 					@endif
+
 				</tbody>
 			</table>
 			<div id="save_changes">
