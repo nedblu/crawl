@@ -11,7 +11,7 @@ class UserTableSeeder extends Seeder {
 				'password' => Hash::make('password'), 
 				'email' => 'carlosaguilarnet@gmail.com', 
 				'userlevel' => 1,
-				'image' => 'emilmdos.png'
+				'image' => ''
 			]
 		];
 

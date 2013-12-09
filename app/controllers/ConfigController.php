@@ -30,7 +30,6 @@ class ConfigController extends BaseController {
 			}elseif ($favicon->getClientOriginalExtension() == 'ico' && !empty($favicon)) {
 				$favicon->move('public', 'favicon.ico');
 			}
-
 		}
 
 		$descripcion = Input::get('descripcion');	
@@ -42,18 +41,19 @@ class ConfigController extends BaseController {
 			]);		
 		}
 
-		
-		//$paginas = DB::table('pages')->where('status','=',true)->get();
-		//$lenghtR = count($paginas);
-				
-		/*$navOrder = Input::get();
-		var_dump($navOrder);
-		$navOrder2 = $_POST;
-		echo "<br><br><br>";
-		var_dump($navOrder2);*/
+		$paginas = DB::table('pages')->where('status','=',true)->get();
+		$lenghtR = count($paginas);
 
+		DB::table('nav')->truncate();
+		for ($i=1; $i <= $lenghtR ; $i++) { 
+			//$order = $_POST['hideId'.$i];
+			//echo $order.'<br>';
+			DB::table('nav')->insert([
+				'page_id' => $_POST['hideId'.$i]
+			]);
+		}
 
-		
+		return Redirect::to('crawl/paginas');
 	}
 
 }

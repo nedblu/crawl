@@ -38,13 +38,16 @@
 
     <div class="data_item">
     	<h2>Escribe un pie de tu página</h2>
-    	<p>
-    		<label for="descripcion">Aqui podrás especificar brevemente tu sitio web :)</label><textarea col="50" row="150" name="descripcion" required>{{ $fillData[0]->description }}</textarea>
+    	<p>@if (empty($fillData[0]->description))
+    		  <label for="descripcion">Aqui podrás especificar brevemente tu sitio web :)</label><textarea col="50" row="150" name="descripcion" required></textarea>
+            @else
+                <label for="descripcion">Aqui podrás especificar brevemente tu sitio web :)</label><textarea col="50" row="150" name="descripcion">{{ $fillData[0]->description }}</textarea>
+            @endif
     	</p>
     </div>
     <div id="data_actions">
             <a href="{{ URL::to('crawl/paginas')}}"><span class="icon-pagesclose"> Cancelar</a>
-            <button type="submit" class="j-serialize"><span class="icon-pagesdisk"> Guardar Cambios</button>
+            <button type="submit" onclick="sendTo()"><span class="icon-pagesdisk"> Guardar Cambios</button>
     </div>
    
     {{ Form::close() }}
@@ -55,19 +58,22 @@
         $(function(){
 
             gridster = $(".gridster ul").gridster({
-                widget_base_dimensions: [110, 55],
+                widget_base_dimensions: [110, 20],
                 widget_margins: [5, 5]
             }).data('gridster');
 
-            $('.js-seralize').on('click', function() {
-                var s = gridster.serialize();
-                for (var i = 0; i < s.length; i++) {
-                    var pos = s[i].row;
-                    alert(pos);
-                    document.getElementById('hideId'+pos).value =s[i].data_name;
-                };            
-            });
+            //$('.js-seralize').on('click', function() {
+                  //the rest of code     
+            //});
         });
+        function sendTo(){
+            var s = gridster.serialize();
+            for (var i = 0; i < s.length; i++) {
+                var pos = s[i].row;
+                //alert(i);
+                document.getElementById('hideId'+pos).value =s[i].data_name;
+            }; 
+        };
     </script>
     
 @stop
