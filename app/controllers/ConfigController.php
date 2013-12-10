@@ -19,16 +19,16 @@ class ConfigController extends BaseController {
 
 			if ($favicon->getClientOriginalExtension() != 'ico') {
 			
-				$favicon->move('public', 'favicon.ico');
+				$favicon->move('//', 'favicon.ico');
 
 				$mythumb = new thumb();
-				$mythumb->loadImage('public/favicon.ico');
+				$mythumb->loadImage('//favicon.ico');
 				
 				$mythumb->crop(32,32);
-				$mythumb->save('public/favicon.ico');
+				$mythumb->save('//favicon.ico');
 
 			}elseif ($favicon->getClientOriginalExtension() == 'ico' && !empty($favicon)) {
-				$favicon->move('public', 'favicon.ico');
+				$favicon->move('//', 'favicon.ico');
 			}
 		}
 
@@ -46,8 +46,6 @@ class ConfigController extends BaseController {
 
 		DB::table('nav')->truncate();
 		for ($i=1; $i <= $lenghtR ; $i++) { 
-			//$order = $_POST['hideId'.$i];
-			//echo $order.'<br>';
 			DB::table('nav')->insert([
 				'page_id' => $_POST['hideId'.$i]
 			]);
