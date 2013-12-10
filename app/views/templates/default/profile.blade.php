@@ -7,6 +7,7 @@
 	{{ HTML::style('css/profile.css') }}
 	{{ HTML::script('js/jquery-1.10.2.min.js') }}
 	{{ HTML::script('js/template.js') }}
+	<link rel="shortcut icon" href="{{ URL::to('img/favicon.ico') }}">
 </head>
 <body>
 	<header>

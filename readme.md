@@ -9,7 +9,7 @@ This project is based on Laravel 4, a beautiful framework for artisans. Our main
 
 ### Contributing To Crawl
 
-This project is opensource and we would like you contribute with us.
+The Crawl CMS is an open-sourced software licensed under the MIT license
 
 ### License
 

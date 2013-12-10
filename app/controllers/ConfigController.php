@@ -19,16 +19,16 @@ class ConfigController extends BaseController {
 
 			if ($favicon->getClientOriginalExtension() != 'ico') {
 			
-				$favicon->move('//', 'favicon.ico');
+				$favicon->move('img/', 'favicon.ico');
 
 				$mythumb = new thumb();
-				$mythumb->loadImage('//favicon.ico');
+				$mythumb->loadImage('img/favicon.ico');
 				
 				$mythumb->crop(32,32);
-				$mythumb->save('//favicon.ico');
+				$mythumb->save('img/favicon.ico');
 
 			}elseif ($favicon->getClientOriginalExtension() == 'ico' && !empty($favicon)) {
-				$favicon->move('//', 'favicon.ico');
+				$favicon->move('img', 'favicon.ico');
 			}
 		}
 
