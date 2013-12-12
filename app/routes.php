@@ -41,7 +41,7 @@ Route::group(['prefix' => 'crawl'], function(){
 		'before'=>'auth', 
 		function()
 		{
-			return "Esto es el home";
+			return "<link rel='shortcut icon' href='img/favicon.ico'>Esto es el home";
 		}
 	]);
 
@@ -149,6 +149,17 @@ Route::group(['prefix' => 'crawl'], function(){
 
 	Route::get('usuarios/del/{id}', [
 		'uses' => 'UserController@delete',
+		'before' => 'auth'
+	]);
+
+	/*
+	|---------------------------------------------------------------------------
+	| Section for operations in Widgets, calling WidgetsController
+	|---------------------------------------------------------------------------
+	*/
+
+	Route::get('widgets', [
+		'uses' => 'WidgetController@showWidgets',
 		'before' => 'auth'
 	]);
 

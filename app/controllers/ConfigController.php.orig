@@ -19,8 +19,19 @@ class ConfigController extends BaseController {
 
 			if ($favicon->getClientOriginalExtension() != 'ico') {
 			
-				$favicon->move('img/', 'favicon.ico')
-				;
+<<<<<<< HEAD
+				$favicon->move('//', 'favicon.ico');
+
+				$mythumb = new thumb();
+				$mythumb->loadImage('//favicon.ico');
+				
+				$mythumb->crop(32,32);
+				$mythumb->save('//favicon.ico');
+
+			}elseif ($favicon->getClientOriginalExtension() == 'ico' && !empty($favicon)) {
+				$favicon->move('//', 'favicon.ico');
+=======
+				$favicon->move('img/', 'favicon.ico');
 
 				$mythumb = new thumb();
 				$mythumb->loadImage('img/favicon.ico');
@@ -30,6 +41,7 @@ class ConfigController extends BaseController {
 
 			}elseif ($favicon->getClientOriginalExtension() == 'ico' && !empty($favicon)) {
 				$favicon->move('img', 'favicon.ico');
+>>>>>>> 496ce887f3ca39660858b158218812c83be6e5b1
 			}
 		}
 
