@@ -42,14 +42,9 @@ Route::group(['prefix' => 'crawl'], function(){
 		'before' => 'auth'
 	]);
 
-
-
 	Route::get('/', [
-		'before'=>'auth', 
-		function()
-		{
-			return "Esto es el home";
-		}
+		'uses' => 'ConfigController@showConfig',
+		'before' => 'auth'
 	]);
 
 	/*
@@ -116,22 +111,15 @@ Route::group(['prefix' => 'crawl'], function(){
 	|---------------------------------------------------------------------------
 	*/
 
-	/*Route::get('configuracion', [
-		'before' =>'auth',
-		function(){
-			$paginas = DB::table('pages')->where('status','=',true)->get();
-			return View::make('configure')->with(['pagesLoad'=>$paginas]);
-		}]);*/
-
 	Route::get('configuracion', [
 		'uses' => 'ConfigController@showConfig',
 		'before' => 'auth'
-		]);
+	]);
 
 	Route::post('configuracion/save', [
 		'uses' => 'ConfigController@saveConfig',
 		'before' => 'auth|csrf'
-		]);
+	]);
 
 	/*
 	|---------------------------------------------------------------------------
