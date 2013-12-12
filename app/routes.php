@@ -13,10 +13,11 @@
 
 //For testing
 // Display all SQL executed in Eloquent
-Event::listen('illuminate.query', function($query)
+/*Event::listen('illuminate.query', function($query)
 {
     var_dump($query);
 });
+*/
 
 Route::get('/', function()
 {
