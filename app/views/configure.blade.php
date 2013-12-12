@@ -9,7 +9,7 @@
 		<h2>¿Tienes un favicon?</h2>
 		<p class="favicon"> 
             @if ($fillData)
-                {{ HTML::image('favicon.ico', 'YOlO') }}
+                {{ HTML::image('img/favicon.ico', 'YOlO') }}
             @endif
 			<label for="favicon">Recuerda que debe ser una imagen de 16x16 pixeles y en formato .ico</label><input type="file" name="favicon" accept="image/*">
 		</p>

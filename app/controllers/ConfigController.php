@@ -6,30 +6,15 @@ class ConfigController extends BaseController {
 	{
 		$paginas = DB::table('pages')->where('status','=',true)->get();
 		$config = DB::table('config')->get();
-		return View::make('configure')->with(['pagesLoad'=>$paginas])->with(['fillData'=>$config]);		
-		
+		return View::make('configure')->with(['pagesLoad'=>$paginas])->with(['fillData'=>$config]);				
 	}
 
 	public function saveConfig()
 	{
 
-		if (Input::hasFile('favicon') == true) {
+		if (Input::hasFile('favicon')) {
 
-			$favicon = Input::file('favicon');
-
-			if ($favicon->getClientOriginalExtension() != 'ico') {
-			
-				$favicon->move('img/', 'favicon.ico');
-
-				$mythumb = new thumb();
-				$mythumb->loadImage('img/favicon.ico');
-				
-				$mythumb->crop(32,32);
-				$mythumb->save('img/favicon.ico');
-
-			}elseif ($favicon->getClientOriginalExtension() == 'ico' && !empty($favicon)) {
-				$favicon->move('img', 'favicon.ico');
-			}
+			Image::make(Input::file('favicon')->getRealPath())->grab(32)->save('img/favicon.ico',100);
 		}
 
 		$descripcion = Input::get('descripcion');	
