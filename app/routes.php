@@ -1,5 +1,4 @@
 <?php
-
 //For testing
 // Display all SQL executed in Eloquent
 /*Event::listen('illuminate.query', function($query)
@@ -42,7 +41,6 @@ Route::group(['prefix' => 'crawl'], function(){
 	| Section for operations in Pages, calling PagesController
 	|---------------------------------------------------------------------------
 	*/
-
 	Route::get('paginas', [
 		'uses' => 'PagesController@index',
 		'before' => 'auth'
