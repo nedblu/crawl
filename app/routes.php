@@ -29,16 +29,8 @@ Route::group(['prefix' => 'crawl'], function(){
 	]);
 
 	Route::get('/', [
-<<<<<<< HEAD
-		'before'=>'auth', 
-		function()
-		{
-			return "<link rel='shortcut icon' href='img/favicon.ico'>Esto es el home";
-		}
-=======
 		'uses' => 'ConfigController@showConfig',
 		'before' => 'auth'
->>>>>>> dev
 	]);
 
 	/*

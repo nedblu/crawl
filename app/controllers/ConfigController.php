@@ -14,26 +14,7 @@ class ConfigController extends BaseController {
 
 		if (Input::hasFile('favicon')) {
 
-<<<<<<< HEAD
-			$favicon = Input::file('favicon');
-
-			if ($favicon->getClientOriginalExtension() != 'ico') {
-			
-				$favicon->move('img/', 'favicon.ico')
-				;
-
-				$mythumb = new thumb();
-				$mythumb->loadImage('img/favicon.ico');
-				
-				$mythumb->crop(32,32);
-				$mythumb->save('img/favicon.ico');
-
-			}elseif ($favicon->getClientOriginalExtension() == 'ico' && !empty($favicon)) {
-				$favicon->move('img', 'favicon.ico');
-			}
-=======
 			Image::make(Input::file('favicon')->getRealPath())->grab(32)->save('img/favicon.ico',100);
->>>>>>> dev
 		}
 
 		$descripcion = Input::get('descripcion');	
