@@ -9,7 +9,15 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	$nav = DB::table('pages')->get();
+
+	return View::make('themes.index')->with('links',$nav);
+});
+
+Route::get('/{page}', function($page){
+
+	$nav = DB::table('pages')->get();
+	return View::make('themes.pages')->with('links',$nav);
 });
 
 Route::group(['prefix' => 'crawl'], function(){
