@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>{{ $data[0]->title }}</title>
-        <meta name="description" content="{{ Str::words($data[0]->content,50,'...'); }}">
+        <meta name="description" content="{{ Str::words(strip_tags($data[0]->content),50,'...'); }}">
         <meta name="viewport" content="width=device-width">
         <meta name="keywords" content="{{ $data[0]->keywords }}">
 
@@ -28,7 +28,7 @@
                 <h1 class="title">{{ $data[0]->title }}</h1>
                 <nav>
                     <ul>
-                        <li>{{ HTML::link('/', 'Inicio') }}</li>
+                        <li>{{ HTML::link('/', $data[0]->name) }}</li>
                 @if($links)
                     @foreach($links as $link)
                     @if(($link->status) == true)

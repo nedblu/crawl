@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Este es el tamplate principal</title>
+	<title>Este es tu perfil de Crawl</title>
 	{{ HTML::style('css/template.css') }}
 	{{ HTML::style('css/profile.css') }}
 	{{ HTML::script('js/jquery-1.10.2.min.js') }}

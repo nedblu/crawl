@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Este es el tamplate de widgets</title>
+	<title>Widgets de Crawl</title>
 	{{ HTML::style('css/template.css') }}
 	{{ HTML::style('css/profile.css') }}
 	{{ HTML::script('js/jquery-1.10.2.min.js') }}
@@ -40,7 +40,7 @@
 					<li>{{ HTML::link('crawl/configuracion', 'Configuracion') }}</li>
 					<li>{{ HTML::link('crawl/paginas','Páginas') }}</li>
 					<li>{{ HTML::link('crawl/widgets', 'Widgets') }}</li>
-					<li><a href="">Usuarios</a></li>
+					<li>{{ HTML::link('crawl/usuarios', 'Usuarios') }}</li>
 				</ul>
 			</nav>
 		</section>

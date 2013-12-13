@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Este es el tamplate de configuraciones</title>
+	<title>Configuración de Crawl</title>
 	{{ HTML::style('css/template.css') }}
 	{{ HTML::style('css/profile.css') }}
 	{{ HTML::style('css/dnd.css') }}
