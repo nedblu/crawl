@@ -6,9 +6,10 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
+        <title>{{ $data[0]->title }}</title>
+        <meta name="description" content="{{ Str::words($data[0]->content,50,'...'); }}">
         <meta name="viewport" content="width=device-width">
+        <meta name="keywords" content="{{ $data[0]->keywords }}">
 
         {{ HTML::style('css/themes/normalize.min.css') }}
         {{ HTML::style('css/themes/main.css') }}
@@ -24,14 +25,14 @@
 
         <div class="header-container">
             <header class="wrapper clearfix">
-                <h1 class="title">Inicio</h1>
+                <h1 class="title">{{ $data[0]->title }}</h1>
                 <nav>
                     <ul>
                         <li>{{ HTML::link('/', 'Inicio') }}</li>
                 @if($links)
                     @foreach($links as $link)
                     @if(($link->status) == true)
-                        <li>{{ HTML::link(Str::slug($link->name), $link->name) }}</li>
+                        <li>{{ HTML::link('p/' . Str::slug($link->name), $link->name) }}</li>
                     @endif
                     @endforeach      
                 @endif
@@ -44,22 +45,11 @@
             <div class="main wrapper clearfix">
 
                 <article>
-                    <header>
-                        <h1>article header h1</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec.</p>
-                    </header>
+                    
                     <section>
-                        <h2>article section h2</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
+                        {{ $data[0]->content }}
                     </section>
-                    <section>
-                        <h2>article section h2</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
-                    </section>
-                    <footer>
-                        <h3>article footer h3</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor.</p>
-                    </footer>
+                   
                 </article>
 
                 <aside>

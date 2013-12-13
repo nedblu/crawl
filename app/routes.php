@@ -4,21 +4,10 @@
 /*Event::listen('illuminate.query', function($query)
 {
     var_dump($query);
-});
-*/
+});*/
 
-Route::get('/', function()
-{
-	$nav = DB::table('pages')->get();
-
-	return View::make('themes.index')->with('links',$nav);
-});
-
-Route::get('/{page}', function($page){
-
-	$nav = DB::table('pages')->get();
-	return View::make('themes.pages')->with('links',$nav);
-});
+Route::get('/', 'SiteController@index');
+Route::get('/p/{page}', 'SiteController@pages');
 
 Route::group(['prefix' => 'crawl'], function(){
 	

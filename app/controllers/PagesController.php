@@ -27,14 +27,15 @@ class PagesController extends \BaseController {
 	public function editPage()
 	{
 		$id = Input::get('id');
-
+		$status = DB::table('pages')->where('id',$id)->get(['status']);
 		$editPage = [
 			'name'  	=> Input::get('name'),
 			'title' 	=> Input::get('title'),
+			'link'		=> Str::slug(Input::get('name')),
 			'keywords' 	=> Input::get('keywords'),
 			'layout'	=> Input::get('layout'),
 			'content' 	=> Input::get('content'),
-			'status'	=> false
+			'status'	=> $status[0]->status
 		];
 
 		
@@ -54,7 +55,7 @@ class PagesController extends \BaseController {
 		}
 		else
 		{
-			
+		
 			Page::where('id',$id)->update($editPage);
 
 			return Redirect::to('crawl/paginas');
@@ -63,9 +64,27 @@ class PagesController extends \BaseController {
 
 	public function deletePage($id)
 	{
+		$id_array = [
+			'id' => $id
+		];
+		$rules = [
+			'id' => 'numeric|min:2'
+		];
+		$messages = [
+			'numeric' => '<p class="errors"><b>Advertencia:</b> Debe ser un dato numerico.</p>',
+			'min'	  => '<p class="errors"><b>Advertencia:</b> No puedes eliminar el home del sitio.</p>'
+		];
 
-		Page::where('id',$id)->delete();
-		return Redirect::to('crawl/paginas');
+		$v = Validator::make($id_array,$rules,$messages);
+
+		if($v->passes())
+		{
+			Page::where('id',$id)->delete();
+
+			return Redirect::to('crawl/paginas');
+		}
+
+		return Redirect::to('crawl/paginas')->withErrors($v);
 
 	}
 
@@ -101,6 +120,7 @@ class PagesController extends \BaseController {
 		$newPage = [
 			'name'  	=> Input::get('name'),
 			'title' 	=> Input::get('title'),
+			'link'		=> Str::slug(Input::get('name')),
 			'keywords' 	=> Input::get('keywords'),
 			'layout'	=> Input::get('layout'),
 			'content' 	=> Input::get('content'),
