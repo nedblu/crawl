@@ -18,6 +18,7 @@ class CreateTablePages extends Migration {
 
 			$table->string('name', 50);
 			$table->string('title', 50);
+			$table->string('link', 100);
 			$table->string('keywords', 300);
 			$table->integer('layout');
 			$table->text('content');

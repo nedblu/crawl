@@ -38,8 +38,8 @@
 				<ul>
 					<li>{{ HTML::link('crawl/configuracion', 'Configuracion') }}</li>
 					<li>{{ HTML::link('crawl/paginas','Páginas') }}</li>
-					<li><a href="">Widgets</a></li>
-					<li><a href="">Usuarios</a></li>
+					<li>{{ HTML::link('crawl/widgets','Widgets') }}</li>
+					<li>{{ HTML::link('crawl/usuarios','Usuarios') }}</a></li>
 				</ul>
 			</nav>
 		</section>

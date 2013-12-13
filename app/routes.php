@@ -1,20 +1,13 @@
 <?php
-
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
-
-Route::get('/', function()
+//For testing
+// Display all SQL executed in Eloquent
+/*Event::listen('illuminate.query', function($query)
 {
-	return View::make('hello');
-});
+    var_dump($query);
+});*/
+
+Route::get('/', 'SiteController@index');
+Route::get('/p/{page}', 'SiteController@pages');
 
 Route::group(['prefix' => 'crawl'], function(){
 	
@@ -35,14 +28,17 @@ Route::group(['prefix' => 'crawl'], function(){
 		'before' => 'auth'
 	]);
 
-
-
 	Route::get('/', [
+<<<<<<< HEAD
 		'before'=>'auth', 
 		function()
 		{
 			return "<link rel='shortcut icon' href='img/favicon.ico'>Esto es el home";
 		}
+=======
+		'uses' => 'ConfigController@showConfig',
+		'before' => 'auth'
+>>>>>>> dev
 	]);
 
 	/*
@@ -50,7 +46,6 @@ Route::group(['prefix' => 'crawl'], function(){
 	| Section for operations in Pages, calling PagesController
 	|---------------------------------------------------------------------------
 	*/
-
 	Route::get('paginas', [
 		'uses' => 'PagesController@index',
 		'before' => 'auth'
@@ -109,22 +104,15 @@ Route::group(['prefix' => 'crawl'], function(){
 	|---------------------------------------------------------------------------
 	*/
 
-	/*Route::get('configuracion', [
-		'before' =>'auth',
-		function(){
-			$paginas = DB::table('pages')->where('status','=',true)->get();
-			return View::make('configure')->with(['pagesLoad'=>$paginas]);
-		}]);*/
-
 	Route::get('configuracion', [
 		'uses' => 'ConfigController@showConfig',
 		'before' => 'auth'
-		]);
+	]);
 
 	Route::post('configuracion/save', [
 		'uses' => 'ConfigController@saveConfig',
 		'before' => 'auth|csrf'
-		]);
+	]);
 
 	/*
 	|---------------------------------------------------------------------------

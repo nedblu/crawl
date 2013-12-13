@@ -70,7 +70,7 @@
 			<h2>Contenido</h2>
 			{{ $errors->first('content') }}
 			<textarea name="content" id="area" style="width: 100%;background-color: white;height: 400px;">
-				{{ $page->name }}
+				{{ $page->content }}
 			</textarea>
 		</section>
 		<div id="data_actions">
