@@ -13,8 +13,10 @@ class ConfigController extends BaseController {
 	{
 
 		if (Input::hasFile('favicon')) {
-
-			Image::make(Input::file('favicon')->getRealPath())->grab(32)->save('img/favicon.ico',100);
+			if(Input::file('favicon')->getClientOriginalExtension() != 'ico')
+				Image::make(Input::file('favicon')->getRealPath())->grab(32)->save('img/favicon.ico',100);
+			else
+				Input::file('favicon')->move('img','favicon.ico');
 		}
 
 		$descripcion = Input::get('descripcion');	
