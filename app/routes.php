@@ -163,4 +163,9 @@ Route::group(['prefix' => 'crawl'], function(){
 		'before' => 'auth'
 	]);
 
+	Route::post('widgets/save',[
+		'uses' =>'WidgetController@saveWidgets',
+		'before' => 'auth|csrf'
+	]);
+
 });
