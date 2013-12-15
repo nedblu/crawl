@@ -62,7 +62,7 @@
 
         <div class="footer-container">
             <footer class="wrapper">
-                <h3>footer</h3>
+                <h3>{{ $footer[0]->description }}</h3>
             </footer>
         </div>
 
