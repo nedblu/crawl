@@ -44,21 +44,14 @@ class UserController extends \BaseController {
 			mkdir($path, 0700);
 		}
 
-		if( !empty($update_data['pic']) )
+		if( Input::hasFile('pic') )
 		{
 
 			$destinationPath = $path;
-			$fileName = Str::random($length = 16) . "." . $update_data['pic']->getClientOriginalExtension();
-			$update_data['pic']->move($path, $fileName);
-		
-			$mythumb = new thumb();
-			$mythumb->loadImage($path . $fileName);
-			
-			$mythumb->crop(100, 100);
-			$mythumb->save($path . 'thumb100-' . $fileName);
+			$fileName = Auth::user()->username . ".jpg";
 
-			$mythumb->crop(48, 48);
-			$mythumb->save($path . 'thumb48-' . $fileName);
+			Image::make(Input::file('pic')->getRealPath())->grab(100)->save($path . 'thumb100-' . $fileName, 100);
+			Image::make(Input::file('pic')->getRealPath())->grab(48)->save($path . 'thumb48-' . $fileName, 100);
 
 			$flag_pic = true;
 		}

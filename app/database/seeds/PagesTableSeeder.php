@@ -8,6 +8,7 @@ class PagesTableSeeder extends Seeder {
 			[
 				'name' => 'Pagina1',
 				'title' => 'Inicio',
+				'link' => 'pagina1',
 				'keywords' => 'Prueba, Prueba, Prueba, Prueba, Prueba, Prueba, Prueba, Prueba', 
 				'layout' => 1, 
 				'content' => 'lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem',
@@ -16,6 +17,7 @@ class PagesTableSeeder extends Seeder {
 			[
 				'name' => 'Pagina2',
 				'title' => 'Inicio',
+				'link' => 'pagina2',
 				'keywords' => 'Prueba, Prueba, Prueba, Prueba, Prueba, Prueba, Prueba, Prueba', 
 				'layout' => 1, 
 				'content' => 'lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem',
@@ -24,6 +26,7 @@ class PagesTableSeeder extends Seeder {
 			[
 				'name' => 'Pagina3',
 				'title' => 'Inicio',
+				'link' => 'pagina3',
 				'keywords' => 'Prueba, Prueba, Prueba, Prueba, Prueba, Prueba, Prueba, Prueba', 
 				'layout' => 1, 
 				'content' => 'lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem',
@@ -32,6 +35,7 @@ class PagesTableSeeder extends Seeder {
 			[
 				'name' => 'Pagina4',
 				'title' => 'Inicio',
+				'link' => 'pagina4',
 				'keywords' => 'Prueba, Prueba, Prueba, Prueba, Prueba, Prueba, Prueba, Prueba', 
 				'layout' => 1, 
 				'content' => 'lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem',
@@ -40,6 +44,7 @@ class PagesTableSeeder extends Seeder {
 			[
 				'name' => 'Pagina5',
 				'title' => 'Inicio',
+				'link' => 'pagina5',
 				'keywords' => 'Prueba, Prueba, Prueba, Prueba, Prueba, Prueba, Prueba, Prueba', 
 				'layout' => 1, 
 				'content' => 'lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem',
@@ -48,6 +53,7 @@ class PagesTableSeeder extends Seeder {
 			[
 				'name' => 'Pagina6',
 				'title' => 'Inicio',
+				'link' => 'pagina6',
 				'keywords' => 'Prueba, Prueba, Prueba, Prueba, Prueba, Prueba, Prueba, Prueba', 
 				'layout' => 1, 
 				'content' => 'lorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem',

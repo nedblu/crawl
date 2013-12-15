@@ -16,7 +16,9 @@ class CreateTableWidgets extends Migration {
 			$table->increments('id');
 
 			$table->string('name', 45);
-			$table->string('config', 300);
+			$table->text('config');
+			$table->boolean('status');
+			$table->string('image',50);
 
 			$table->timestamps();
 		});

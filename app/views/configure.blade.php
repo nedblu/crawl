@@ -9,12 +9,12 @@
 		<h2>¿Tienes un favicon?</h2>
 		<p class="favicon"> 
             @if ($fillData)
-                {{ HTML::image('favicon.ico', 'YOlO') }}
+                {{ HTML::image('img/favicon.ico', 'YOlO') }}
             @endif
 			<label for="favicon">Recuerda que debe ser una imagen de 16x16 pixeles y en formato .ico</label><input type="file" name="favicon" accept="image/*">
 		</p>
 	</div>
-	<div class="data_item">
+	<!--div class="data_item">
 		<h2>Ordena tu menú</h2>
 		<p>	
 			Acomoda tus páginas según quieras se muestren en el menú
@@ -34,11 +34,12 @@
 	        </ul>
     	</div>
         </p>
-    </div>
+    </div-->
 
     <div class="data_item">
     	<h2>Escribe un pie de tu página</h2>
-    	<p>@if (empty($fillData[0]->description))
+    	<p>
+            @if (empty($fillData[0]->description))
     		  <label for="descripcion">Aqui podrás especificar brevemente tu sitio web :)</label><textarea col="50" row="150" name="descripcion" required></textarea>
             @else
                 <label for="descripcion">Aqui podrás especificar brevemente tu sitio web :)</label><textarea col="50" row="150" name="descripcion">{{ $fillData[0]->description }}</textarea>

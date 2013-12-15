@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Bienvenido a Crawl</title>
+	<title>Widgets de Crawl</title>
 	{{ HTML::style('css/template.css') }}
-	{{ HTML::style('css/pages.css') }}
+	{{ HTML::style('css/profile.css') }}
 	{{ HTML::script('js/jquery-1.10.2.min.js') }}
 	{{ HTML::script('js/template.js') }}
 	<link rel="shortcut icon" href="{{ URL::to('img/favicon.ico') }}">
+	
 </head>
 <body>
 	<header>
@@ -38,8 +39,8 @@
 				<ul>
 					<li>{{ HTML::link('crawl/configuracion', 'Configuracion') }}</li>
 					<li>{{ HTML::link('crawl/paginas','Páginas') }}</li>
-					<li>{{ HTML::link('crawl/widgets','Widgets') }}</li>
-					<li>{{ HTML::link('crawl/usuarios','Usuarios') }}</a></li>
+					<li>{{ HTML::link('crawl/widgets', 'Widgets') }}</li>
+					<li>{{ HTML::link('crawl/usuarios', 'Usuarios') }}</li>
 				</ul>
 			</nav>
 		</section>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Este es el tamplate principal</title>
+	<title>Creando algo nuevo en Crawl</title>
 	{{ HTML::style('css/template.css') }}
 	{{ HTML::style('css/nueva.css') }}
 	{{ HTML::script('js/jquery-1.10.2.min.js') }}
@@ -38,8 +38,8 @@
 				<ul>
 					<li>{{ HTML::link('crawl/configuracion', 'Configuracion') }}</li>
 					<li>{{ HTML::link('crawl/paginas','Páginas') }}</li>
-					<li><a href="">Widgets</a></li>
-					<li><a href="">Usuarios</a></li>
+					<li>{{ HTML::link('crawl/widgets','Widgets') }}</li>
+					<li>{{ HTML::link('crawl/usuarios','Usuarios') }}</a></li>
 				</ul>
 			</nav>
 		</section>

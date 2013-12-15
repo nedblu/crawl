@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,17 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+=======
+//For testing
+// Display all SQL executed in Eloquent
+/*Event::listen('illuminate.query', function($query)
+{
+    var_dump($query);
+});*/
+
+Route::get('/', 'SiteController@index');
+Route::get('/p/{page}', 'SiteController@pages');
+>>>>>>> dev
 
 Route::group(['prefix' => 'crawl'], function(){
 	
@@ -45,7 +57,6 @@ Route::group(['prefix' => 'crawl'], function(){
 	| Section for operations in Pages, calling PagesController
 	|---------------------------------------------------------------------------
 	*/
-
 	Route::get('paginas', [
 		'uses' => 'PagesController@index',
 		'before' => 'auth'
@@ -138,6 +149,22 @@ Route::group(['prefix' => 'crawl'], function(){
 	Route::get('usuarios/del/{id}', [
 		'uses' => 'UserController@delete',
 		'before' => 'auth'
+	]);
+
+	/*
+	|---------------------------------------------------------------------------
+	| Section for operations in Widgets, calling WidgetsController
+	|---------------------------------------------------------------------------
+	*/
+
+	Route::get('widgets', [
+		'uses' => 'WidgetController@showWidgets',
+		'before' => 'auth'
+	]);
+
+	Route::post('widgets/save',[
+		'uses' =>'WidgetController@saveWidgets',
+		'before' => 'auth|csrf'
 	]);
 
 });

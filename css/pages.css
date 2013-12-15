@@ -129,7 +129,7 @@ input[type="checkbox"]:before {
   -o-border-radius: 50px;
   border-radius: 50px;
   content: "";
-  background: #49dccf;
+  background: #f08270;
   -webkit-box-shadow: inset 0 0 4px #333, 0 -2px 2px #b9b9b5, 0 2px 2px #f4f4f4;
   -moz-box-shadow: inset 0 0 4px #333, 0 -2px 2px #b9b9b5, 0 2px 2px #f4f4f4;
   -ms-box-shadow: inset 0 0 4px #333, 0 -2px 2px #b9b9b5, 0 2px 2px #f4f4f4;
@@ -177,7 +177,7 @@ input[type="checkbox"]:checked:before {
   -o-border-radius: 50px;
   border-radius: 50px;
   content: "";
-  background: #f08270;
+  background: #49dccf;
 }
 input[type="checkbox"]:checked:after {
   -webkit-transition: all 0.5s;
