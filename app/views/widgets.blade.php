@@ -63,7 +63,7 @@
             <ul id="widgetSave" class="sortable">
                  @if ($widgetF)
                     @foreach ($widgetF as $widget)
-                        <li id="{{$widget->id}}">{{$widget->name}}</li>
+                        <li id="{{$widget->id}}">{{ HTML::image( $widget->image, 'widget'.$widget->name) }}{{$widget->name}}</li>
                     @endforeach
                 @endif
             </ul>
