@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 
 /*
 |--------------------------------------------------------------------------
@@ -12,21 +11,8 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
-=======
-//For testing
-// Display all SQL executed in Eloquent
-/*Event::listen('illuminate.query', function($query)
-{
-    var_dump($query);
-});*/
-
 Route::get('/', 'SiteController@index');
 Route::get('/p/{page}', 'SiteController@pages');
->>>>>>> dev
 
 Route::group(['prefix' => 'crawl'], function(){
 	

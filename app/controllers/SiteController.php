@@ -24,7 +24,6 @@ class SiteController extends \BaseController {
 					->with('links', self::getPages())
 					->with('data', $data)
 					->with('footer', self::getFooter());
-		//return self::getFooter();
 	}
 
 	public function pages($page)
@@ -37,6 +36,5 @@ class SiteController extends \BaseController {
 					->with('data', $data)
 					->with('index',$index)
 					->with('footer', self::getFooter());
-		//return self::getFooter();
 	}
 }
