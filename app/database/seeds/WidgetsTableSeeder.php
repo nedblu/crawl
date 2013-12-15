@@ -7,15 +7,15 @@ class WidgetsTableSeeder extends Seeder {
 		$widgets = [
 			[
 				'name' => 'clock',
-				'config' => 'route/to/clock',
+				'config' => '/assets/widgets/clock.php',
 				'status' => true,
-				'image' => 'route/to/image'
+				'image' => '/assets/widgets/clock.jpg'
 			],
 			[
 				'name' => 'date',
-				'config' => 'route/to/date',
+				'config' => '/assets/widgets/date.php',
 				'status' => true,
-				'image' => 'route/to/image'
+				'image' => '/assets/widgets/date.jpg'
 			]
 		];
 

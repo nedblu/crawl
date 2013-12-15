@@ -4,8 +4,9 @@ class WidgetController extends BaseController {
 
 	public function showWidgets()
 	{
-		$widget = DB::table('widgets')->get();
-		return View::make('widgets')->with([ 'widgets' => $widget ]);
+		$widget = DB::table('widgets')->where('status', '=', false)->get();
+		$widgetF = DB::table('widgets')->where('status', '=', true)->get();
+		return View::make('widgets')->with([ 'widgets' => $widget ])->with(['widgetF' => $widgetF ]);
 		
 	}
 
