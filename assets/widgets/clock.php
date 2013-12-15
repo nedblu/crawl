@@ -33,11 +33,11 @@
 .clock {
   width: 160px;
   height: 160px;
-  position: absolute;
+  position: relative;
   top: 50%;
-  left: 50%;
-  margin-left: -80px;
-  margin-top: -80px;
+  /*left: 50%;*/
+  /*margin-left: -80px;
+  margin-top: -80px;*/
   background: #eee;
   display: none;
   -webkit-border-radius: 80px;
