@@ -6,7 +6,7 @@ class ConfigTableSeeder extends Seeder {
 	{
 		$config = [
 			[
-				'description' => 'Sitio Web para la venta y suministro de gorditas sabrozonas :3'		
+				'description' => 'copyright &copy; 2013. Crawl. Este es un sitio web creado usando Crawl.'		
 			]
 		];
 
