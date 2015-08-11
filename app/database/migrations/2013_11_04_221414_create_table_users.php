@@ -21,6 +21,7 @@ class CreateTableUsers extends Migration {
 			$table->string('email', 60)->unique();
 			$table->integer('userlevel');
 			$table->string('image',100);
+			$table->string('remember_token',100);
 
 			$table->timestamps();
 		});
